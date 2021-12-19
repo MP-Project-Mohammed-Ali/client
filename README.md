@@ -52,7 +52,7 @@ Website about legal advice with many lawyer that have more experience and the us
 
 ![UML Diagrm](https://github.com/MP-Project-Mohammed-Ali/client/blob/main/diagram/UML%20Diagram%20V1.png)
 
-![WireFrame](https://github.com/MP-Project-Mohammed-Ali/client/blob/main/diagram/wireframe.png)
+![WireFrame](https://github.com/MP-Project-Mohammed-Ali/client/blob/main/diagram/WireframeV1.png)
 
 #### Trello:
 [Trello website](https://trello.com/b/wgen9s3X/mp-project-mohammed-ali)
