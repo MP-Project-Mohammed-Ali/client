@@ -27,16 +27,16 @@ Website about legal advice with many lawyer that have more experience and the us
 
 ## Router:
 
-| path        | Component     | Permissions |
-| ----------- | ------------- | ----------- |
-| /signup     | Register Page | Public      |
-| /           | Home Page     | Public      |
-| /login      | Login Page    | public      |
-| /addcase    | Case Page     | User&Lawyer |
-| /addchat    | Chat Page     | User&Lawyer |
-| /showlawyer | Lawyer Page   | User&Lawyer |
-| lawyer/show | Name Lawyer   | Admin only  |
-| user/show   | Name User     | Admin only  |
+| path        | Component     | Permissions | Behavior         |
+| ----------- | ------------- | ----------- |------------------|
+| /signup     | Register Page | Public      | Sign form ,link to login,navigate to homepage after signup |
+| /           | Home Page     | Public      | Home page                                                  |
+| /login      | Login Page    | public      | Login form ,link to signup,navigate to homepage after login|
+| /addcase    | Case Page     | User&Lawyer | Create a case                                              |
+| /addchat    | Chat Page     | User&Lawyer | Conect user with lawyer togather                           |
+| /showlawyer | Lawyer Page   | User&Lawyer | Shows all lawyers to select one of them to take the case   |          
+| lawyer/show | Name Lawyer   | Admin only  | Shows all lawyers                                          | 
+| user/show   | Name User     | Admin only  | Shows all users                                            | 
 
 ## Components:
 * Register Page 
@@ -60,7 +60,8 @@ Website about legal advice with many lawyer that have more experience and the us
 #### Server repositories
 [Server repositories](https://github.com/MP-Project-Mohammed-Ali/server)
 
+### Deployed App Link  
+[Deployed App Link](https://github.com/M0hammed-18)
+
 #### Slides
 [Slide Link](https://github.com/M0hammed-18)
-
-
