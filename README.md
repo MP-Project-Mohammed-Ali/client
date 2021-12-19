@@ -29,12 +29,14 @@ Website about legal advice with many lawyer that have more experience and the us
 
 | path        | Component     | Permissions |
 | ----------- | ------------- | ----------- |
-| /singup     | Register Page | Public      |
+| /signup     | Register Page | Public      |
 | /           | Home Page     | Public      |
 | /login      | Login Page    | public      |
 | /addcase    | Case Page     | User&Lawyer |
 | /addchat    | Chat Page     | User&Lawyer |
 | /showlawyer | Lawyer Page   | User&Lawyer |
+| lawyer/show | Name Lawyer   | Admin only  |
+| user/show   | Name User     | Admin only  |
 
 ## Components:
 * Register Page 
@@ -53,5 +55,7 @@ Website about legal advice with many lawyer that have more experience and the us
 ![WireFrame](https://github.com/MP-Project-Mohammed-Ali/client/blob/main/diagram/wireframe.png)
 
 ## Trello:
-
 [Trello website](https://trello.com/b/wgen9s3X/mp-project-mohammed-ali)
+
+## Server repositories
+[Server repositories](https://github.com/MP-Project-Mohammed-Ali/server)
