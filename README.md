@@ -1,67 +1,70 @@
-# client
+# Getting Started with Create React App
 
-## Description :
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Website about legal advice with many lawyer that have more experience and the user you can ask the lawyer about any question about law.
+## Available Scripts
 
-## User Stories:
+In the project directory, you can run:
 
-- **Signup:** I can sign up to website to complete register information.
-- **Login:** I can login to website so that I can select what I want from this website.
-- **Add Case** As a user I can add case and select lawyer.
-- **ُEdit case** As a user I can edit any case from my profile.
-- **Ask lawyer** As a user I can ask about any case.
-- **show case** As a user I can the most important case without ask lawyer.
+### `npm start`
 
-### Admin Stories:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- **Add User** As a Admin I can add new user and give permation.
-- **Add lawyer** As a Admin I can add new lawyer give permation.
-- **show all case** As a Admin I can show all case.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Lawyer Stories:
+### `npm test`
 
-- **Signup:** I can sign up to website to complete register information.
-- **Login:** I can login to website so that I can select what I want from this website.
-- **show case** As a lawyer I can show all information that user ask about us.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Router:
+### `npm run build`
 
-| path        | Component     | Permissions | Behavior         |
-| ----------- | ------------- | ----------- |------------------|
-| /signup     | Register Page | Public      | Sign form ,link to login,navigate to homepage after signup |
-| /           | Home Page     | Public      | Home page                                                  |
-| /login      | Login Page    | public      | Login form ,link to signup,navigate to homepage after login|
-| /addcase    | Case Page     | User&Lawyer | Create a case                                              |
-| /addchat    | Chat Page     | User&Lawyer | Conect user with lawyer togather                           |
-| /showlawyer | Lawyer Page   | User&Lawyer | Shows all lawyers to select one of them to take the case   |          
-| lawyer/show | Name Lawyer   | Admin only  | Shows all lawyers                                          | 
-| user/show   | Name User     | Admin only  | Shows all users                                            | 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Components:
-* Register Page 
-* Login Page 
-* Home Page
-* Lawyer Page
-* Case Page
-* Chat Page
-* Navbar
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Diagram:
+### `npm run eject`
 
-![UML Diagrm](https://github.com/MP-Project-Mohammed-Ali/client/blob/main/diagram/UML%20Diagram%20V1.png)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-![WireFrame](https://github.com/MP-Project-Mohammed-Ali/client/blob/main/diagram/WireframeV1.png)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-#### Trello:
-[Trello website](https://trello.com/b/wgen9s3X/mp-project-mohammed-ali)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-#### Server repositories
-[Server repositories](https://github.com/MP-Project-Mohammed-Ali/server)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### Deployed App Link  
-[Deployed App Link](https://github.com/M0hammed-18)
+## Learn More
 
-#### Slides
-[Slide Link](https://github.com/M0hammed-18)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
