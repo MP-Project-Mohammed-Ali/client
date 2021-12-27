@@ -1,8 +1,8 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import Nav from "./Nav/index"
-import Register from "./Register";
+import Home from "./component/Home";
+import Nav from "./component/Nav/index"
+import Register from "./component/Register";
 
 function App() {
   return (
