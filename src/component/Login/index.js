@@ -1,38 +1,175 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useSelector,useDispatch } from "react-redux";
-import {signIn} from "../../Reduser/login"
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-const MySwal =withReactContent(Swal)
-import { login1 } from "../../Reduser/login";
+// import React, { useState } from "react";
+// import axios from "axios";
+// import { useSelector,useDispatch } from "react-redux";
+// import {signIn} from "../../Reduser/login"
+// import Swal from "sweetalert2";
+// import withReactContent from "sweetalert2-react-content";
+// const MySwal =withReactContent(Swal)
+// import { login1 } from "../../Reduser/login";
 
-const BASE_URL=process.env.REACT_APP_BASE_URL
+// const BASE_URL=process.env.REACT_APP_BASE_URL
 
-const Login =()=>{
-    // const [name,setName]=useState("")
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
-    const [message,setMassage]=useState("")
+// const Login =()=>{
+//     // const [name,setName]=useState("")
+//     const [email,setEmail]=useState("")
+//     const [password,setPassword]=useState("")
+//     const [message,setMassage]=useState("")
 
-    const state = useSelector((state) => {
-        return {
-          token: state.signIn.token,
-        };
-      });
+//     const state = useSelector((state) => {
+//         return {
+//           token: state.signIn.token,
+//         };
+//       });
     
-      const login = async()=>{
-        setMassage('')
-        try{
-            const result =await axios.post(`${BASE_URL}/login/new`,{
-                email,
-                password,
-            })
-            dispatch(login1({role:result.data.result.role,token:result.data.token}))
-            navigate('/') } catch(err){
-                setMassage(err.res)
-            }
-      }
-}
+//       const login = async()=>{
+//         setMassage('')
+//         try{
+//             const result =await axios.post(`${BASE_URL}/login/new`,{
+//                 email,
+//                 password,
+//             })
+//             dispatch(login1({role:result.data.result.role,token:result.data.token}))
+//             navigate('/') } catch(err){
+//                 setMassage(err.res)
+//             }
+//       }
+// }
+
+// export default Login;
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { login1 } from '../../Reduser/login';
+
+import {
+  ChakraProvider,
+  Box,
+  Text,
+  Link,
+  VStack,
+  Code,
+  Grid,
+  theme,
+  Button,
+  HStack,
+  Input,
+} from '@chakra-ui/react';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+import ReactCodeInput from 'react-verification-code-input';
+const MySwal = withReactContent(Swal);
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [username, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [local, setLocal] = useState('');
+  const state = useSelector(state => {
+    return {
+      Login: state.Login,
+      postRD: state.PostRD,
+    };
+  });
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setLocal(token);
+  }, []);
+  const logIn = async () => {
+    try {
+      const result = await axios.post(`${BASE_URL}/login/new`, {
+        email,
+        password,
+        
+      });
+      const data = {
+        user: result.data.result,
+        token: result.data.token,
+      };
+      dispatch(login1(data));
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Login success',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      
+    } catch (error) {
+       MySwal.fire({
+         icon: 'error',
+         title: 'Oops...',
+         text: 'worng Email or password',
+         confirmButtonColor: 'black',
+       });
+      
+    }
+    
+  };
+  return (
+    <ChakraProvider theme={theme}>
+      <Box
+        borderRadius="3px"
+        border="solid silver"
+        textAlign="center"
+        w="300px"
+        mt="100px"
+        textAlign="center"
+        ml="500px"
+        bg="#fffb"
+        color="black"
+      >
+        <VStack mt="4">
+          {!state.token ? (
+            <div className="mainDiv">
+              <h1>Login</h1>
+              <VStack mt="4">
+                <Input
+                  bg="#222"
+                  color="white"
+                  textAlign="center"
+                  type="email"
+                  width="40"
+                  placeholder="enter Email"
+                  onChange={e => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <br />
+
+                <Input
+                  bg="#222"
+                  color="white"
+                  textAlign="center"
+                  type="password"
+                  width="40"
+                  placeholder="enter Password"
+                  onChange={e => {
+                    setPassword(e.target.value);
+                  }}
+                />
+
+                <br />
+                <Button bg="#777"  onClick={logIn}>
+                  Login
+                </Button>
+                <Link exact href="/reset">
+                  Forget password
+                </Link>
+                <br />
+              </VStack>
+            </div>
+          ) : (
+            <h3></h3>
+          )}
+        </VStack>
+      </Box>
+    </ChakraProvider>
+  );
+};
 
 export default Login;

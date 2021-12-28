@@ -125,6 +125,7 @@ const signUp =async()=>{
                 value="Submit"
                 disabled
               />
+              
             </form>
           </div>
         </main>
