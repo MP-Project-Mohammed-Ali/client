@@ -41,7 +41,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { login1 } from '../../Reduser/login';
+import { login1 } from '../../Reducers/login';
+import { useNavigate } from 'react-router'
 
 import {
   ChakraProvider,
@@ -59,21 +60,21 @@ import {
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import ReactCodeInput from 'react-verification-code-input';
+import { Navigate } from 'react-router-dom';
 const MySwal = withReactContent(Swal);
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Login = () => {
+  const navigate=useNavigate();
   const [email, setEmail] = useState('');
   const [username, setName] = useState('');
   const [password, setPassword] = useState('');
   const [local, setLocal] = useState('');
   const state = useSelector(state => {
-    return {
-      Login: state.Login,
-      postRD: state.PostRD,
-    };
+    return {token:state.signIn.token}
   });
+  console.log(state);
   const dispatch = useDispatch();
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -81,16 +82,17 @@ const Login = () => {
   }, []);
   const logIn = async () => {
     try {
-      const result = await axios.post(`${BASE_URL}/login/new`, {
+      const result1 = await axios.post(`${BASE_URL}/login/new`, {
         email,
         password,
         
       });
-      const data = {
-        user: result.data.result,
-        token: result.data.token,
-      };
-      dispatch(login1(data));
+      navigate("/show")
+      // const data = {
+      //   user: result.data.result,
+      //   token: result.data.token,
+      // };
+      dispatch(login1({role: result1.data.result.role,token:result1.data.token}));
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -110,6 +112,9 @@ const Login = () => {
     }
     
   };
+
+
+
   return (
     <ChakraProvider theme={theme}>
       <Box
@@ -157,7 +162,7 @@ const Login = () => {
                 <Button bg="#777"  onClick={logIn}>
                   Login
                 </Button>
-                <Link exact href="/reset">
+                <Link exact href="/check">
                   Forget password
                 </Link>
                 <br />
