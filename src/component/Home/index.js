@@ -8,7 +8,7 @@ function Home() {
   const Navigate = useNavigate();
 
   const register = () => {
-    Navigate("/signup");
+    Navigate("/regist");
   };
 
   const login = () => {

@@ -16,6 +16,7 @@ import {
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import ReactCodeInput from 'react-verification-code-input';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
@@ -26,6 +27,8 @@ const Reset = () => {
 
 
   const [email, setEmail] = useState('');
+const nav=useNavigate()
+
   const checkemail = async () => {
     try {
       const result = await axios.post(`${BASE_URL}/check`, {
@@ -38,7 +41,7 @@ const Reset = () => {
       showConfirmButton: false,
       timer: 1500,
     });
-      
+    nav("/login")
     } catch (error) {
        MySwal.fire({
          icon: 'error',
