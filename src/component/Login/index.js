@@ -88,11 +88,8 @@ const Login = () => {
         
       });
       navigate("/show")
-      // const data = {
-      //   user: result.data.result,
-      //   token: result.data.token,
-      // };
-      dispatch(login1({role: result1.data.result.role,token:result1.data.token}));
+      console.log(result1.data.result._id);
+      dispatch(login1({role: result1.data.result.role,token:result1.data.token,id:result1.data.result._id}));
       Swal.fire({
         position: 'center',
         icon: 'success',

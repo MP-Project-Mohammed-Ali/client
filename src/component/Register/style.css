@@ -1,4 +1,4 @@
-/* .signupWrapper {
+.signupWrapper {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,11 +14,11 @@
     box-shadow: 0 2px 5px -6px #697a79, 0 0 30px -50px #697a79;
     display: flex;
   }
-  .loginDiv{
+  /* .loginDiv{
     margin-left: 20px;
     margin-top: 10px;
   
-  }
+  } */
   .signupDiv{
     margin-left: 60px;
     border-left: 2px solid black;
@@ -84,7 +84,7 @@
     opacity: 0.8;
   }
   
-  main.signupPanel #signupSubmitButton,
+  /* main.signupPanel #signupSubmitButton,
   main.signupPanel #loginButton {
     background: none;
     border: 1px solid white;
@@ -97,7 +97,7 @@
     letter-spacing: 0.1rem;
     background-color: rgb(76, 103, 114);
   }
-  
+   */
   .signupPanel__half.signupHalf--first {
     flex-grow: 1;
     border-radius: inherit;
@@ -135,10 +135,10 @@
   }
   
   .signupPanel__half.signupHalf--second {
-    background: #E07A5F;
+    background: #eccec5;
     color: white;
-    padding: 2rem;
-    flex-grow: 2;
+    /* padding: 2rem; */
+    flex-grow:1 ;
     border-radius: inherit;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -180,5 +180,8 @@
       margin: 0;
       box-shadow: none;
     }
-  } */
+  }
+  
+
+
   

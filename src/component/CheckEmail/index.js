@@ -32,7 +32,8 @@ const nav=useNavigate()
   const checkemail = async () => {
     try {
       const result = await axios.post(`${BASE_URL}/check`, {
-        email: email,
+        
+        email:email,
       });
     Swal.fire({
       position: 'center',
@@ -41,7 +42,7 @@ const nav=useNavigate()
       showConfirmButton: false,
       timer: 1500,
     });
-    nav("/login")
+    nav("/reset")
     } catch (error) {
        MySwal.fire({
          icon: 'error',
@@ -50,6 +51,7 @@ const nav=useNavigate()
          confirmButtonColor: 'black',
        });
     }
+
     
   };
 
