@@ -24,8 +24,9 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 const ResetPassword = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [code, setCode] = useState(' ');
-  const [password, setPassword] = useState(' ');
+  const [code, setCode] = useState("");
+  const [password, setPassword] = useState("");
+
   const resetPassword = async () => {
     if (code.length > 0) {
       try {
@@ -34,14 +35,16 @@ const ResetPassword = () => {
           code,
           password,
         });
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your password has been reset ',
+          showConfirmButton: false,
+          timer: 1500
+        })
         navigate('/login');
       } catch (error) {
-        MySwal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong!, please try again.',
-          confirmButtonColor: 'black',
-        });
+        
       }
     }
   };
