@@ -46,7 +46,7 @@ const signUp =async()=>{
         password:password,
         // role:process.env.REACT_APP_USER_ROLE
     });
-    if(result.status===201){
+    try{
       Swal.fire({
         position: 'Register successfuly',
         icon: 'success',
@@ -54,8 +54,8 @@ const signUp =async()=>{
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate("/login")
-    } else{
+      navigate("/active")
+    } catch{
       setMessage(result.data.message)
       MySwal.fire({
         icon: 'error',
@@ -74,8 +74,21 @@ const signUp =async()=>{
 
 
     return (
+     
       <ChakraProvider theme={theme}>
+        <Box
+        borderRadius="3px"
+        border="solid silver"
+        textAlign="center"
+        w="400px"
+        mt="100px"
+        textAlign="center"
+        ml="450px"
+        bg="#fffb"
+        color="black"
+      >
         <div>
+        <VStack mt="4">
            <h1>Register</h1>
            {state.token ? (
         <h1>
@@ -110,9 +123,9 @@ const signUp =async()=>{
                 }
               }}
             />
-            <button id="loginButton" onClick={() => navigate("/login")}>
+            <Button id="loginButton" onClick={() => navigate("/login")}>
               or go to login
-            </button>
+            </Button>
           </div>
           <div className="signupPanel__half signupHalf--second">
             <h2>Signup</h2>
@@ -147,18 +160,21 @@ const signUp =async()=>{
                   e.preventDefault();
                   signUp(e);
                 }}>
-                
+                SingUp
               </Button>
-             <label>التسجيل ك</label>
+             {/* <label>التسجيل ك</label>
                <input type="radio" id="under_13" defaultValue="under_13" name="user_age" /><label htmlFor="under_13" className="light">محامي</label><br />
-               <input type="radio" id="over_13" defaultValue="over_13" name="user_age" /><label htmlFor="over_13" className="light">مستخدم</label>
+               <input type="radio" id="over_13" defaultValue="over_13" name="user_age" /><label htmlFor="over_13" className="light">مستخدم</label> */}
             
               </Box>
             
           </div>
         </main>
       )}
+      </VStack>
         </div>
+        
+        </Box>
         </ChakraProvider>
            )
           }
