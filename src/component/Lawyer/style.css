@@ -42,7 +42,7 @@
     grid-gap: 18px;
     /* grid-row-gap: 20px; */
     /* padding-bottom: 10px; */
-    background: cornflowerblue;
+    background: rgb(254, 254, 255);
     width: 99.9%;
   /* background-color: rgb(107, 119, 78); */
     /* margin-top: 100px; */
@@ -73,7 +73,7 @@
   } */
 .Nav{
       text-align: center;
-      background-color: burlywood;
+      background-color: rgb(211, 149, 69);
       padding-top: 3px;
       padding-bottom: 3px;
       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -121,7 +121,10 @@
       
   }
   #button{
-    width: 100%;
-      color: rgb(54, 56, 51);
-      font-size: 20px;
+    /* width: 90%; */
+      color: rgb(238, 240, 235);
+      font-size: 19px;
+      background: rgb(33, 33, 102);
+      /* border-radius: 10%; */
+      text-align: center;
   }

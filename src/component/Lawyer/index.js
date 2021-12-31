@@ -55,6 +55,7 @@ const Laywer = () => {
 
   return (
     <>
+    
     <div className="Nav">
       <h1>المحامين والمستشارين</h1>
       </div>
@@ -80,7 +81,7 @@ const Laywer = () => {
               {/* <h6> {user.FieldOfExpertise} </h6> */}
              
               
-              <button id="but"
+              <button id="button"
               onClick={() => move(user._id)}>الأتعاب المالية {user.name} </button>
               
             </div>
