@@ -47,7 +47,7 @@ const Login = () => {
         email,
         password,
       });
-      navigate("/show");
+      navigate("/profile");
       console.log(result1.data.result._id);
       dispatch(
         login1({

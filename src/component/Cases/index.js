@@ -27,7 +27,7 @@ const Case = () => {
     }
   };
 
-  const sendRequest = async (e) => {
+  const sendCase = async (e) => {
     e.preventDefault();
     console.log(e.target.title.value);
     try {
@@ -59,10 +59,10 @@ const Case = () => {
       {data.map((caase) => (
         <h1>{caase.title}</h1>
       ))}
-      <button onClick={() => setReqiest(true)}>sendRequst</button>
+      <button onClick={() => setReqiest(true)}> طلب</button>
       {Reqiest ? (
         <div className="request">
-          <form onSubmit={sendRequest}>
+          <form onSubmit={sendCase}>
             <label htmlFor="title">Title</label>
             <input type="text" placeholder="title.." name="title" />
             <label htmlFor="desc">Description</label>
