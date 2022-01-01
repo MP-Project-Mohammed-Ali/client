@@ -22,7 +22,6 @@ import {
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
-import { Navigate } from "react-router-dom";
 const MySwal = withReactContent(Swal);
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
