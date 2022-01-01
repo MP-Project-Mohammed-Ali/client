@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { login1 } from "../../Reducers/login";
 import { useNavigate } from "react-router";
+import PasswordChecklist from "react-password-checklist";
+import "./style.css";
 
 import {
   ChakraProvider,
@@ -47,7 +48,7 @@ const Login = () => {
         email,
         password,
       });
-      navigate("/profile");
+      navigate("/show");
       console.log(result1.data.result._id);
       dispatch(
         login1({
@@ -74,64 +75,117 @@ const Login = () => {
   };
 
   return (
-    <ChakraProvider theme={theme}>
-      <Box
-        borderRadius="3px"
-        border="solid silver"
-        textAlign="center"
-        w="300px"
-        mt="100px"
-        textAlign="center"
-        ml="530px"
-        bg="#fffb"
-        color="black"
-      >
-        <VStack mt="4">
-          {!state.token ? (
-            <div className="mainDiv">
-              <h1>Login</h1>
-              <VStack mt="4">
-                <Input
-                  // bg="#222"
-                  color="white"
-                  textAlign="center"
-                  type="email"
-                  width="40"
-                  placeholder="enter Email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-                <br />
+    <div className="bigwrapper">
+      <div className="main">
+        <input type="checkbox" id="chk" aria-hidden="true" />
+        <div className="singup">
+          <form onClick={() => navigate("/regist")}>
+            <label className="SingupLabel" htmlFor="chk" aria-hidden="true">
+              {" "}
+              Sing up{" "}
+            </label>
+            <input
+              type="text"
+              placeholder="Username"
+              width="80%"
+              height="2rem"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              width="80%"
+              height="2rem"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              width="80%"
+              height="2rem"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button id="signupSubmitButton" onClick={(e) => {}}>
+              SingUp
+            </button>
+            <PasswordChecklist
+              id="checklist"
+              rules={[
+                "minLength",
+                "specialChar",
+                "number",
+                "capital",
+                "lowercase",
+              ]}
+              minLength={6}
+              value={password}
+              onChange={(isValid) => {
+                if (isValid) {
+                  const button = document.querySelector("#signupSubmitButton");
+                  button.disabled = false;
+                } else {
+                  const button = document.querySelector("#signupSubmitButton");
+                  button.disabled = true;
+                }
+              }}
+            />
+          </form>
+        </div>
 
-                <Input
-                  bg="#222"
-                  color="white"
-                  textAlign="center"
-                  type="password"
-                  width="40"
-                  placeholder="enter Password"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                />
-
-                <br />
-                <Button bg="#777" onClick={logIn}>
-                  Login
-                </Button>
-                <Link exact href="/check">
-                  Forget password
-                </Link>
-                <br />
-              </VStack>
-            </div>
-          ) : (
-            <h3></h3>
-          )}
-        </VStack>
-      </Box>
-    </ChakraProvider>
+        <div className="login">
+          <form>
+            <label
+              className="LoginLable"
+              htmlFor="chk"
+              aria-hidden="true"
+              a
+              target="_blank"
+              href="locall"
+            >
+              Login
+            </label>
+            <input
+              bg="#222"
+              color="white"
+              textAlign="center"
+              type="email"
+              width="40"
+              placeholder="enter Email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <input
+              bg="#222"
+              color="white"
+              textAlign="center"
+              type="password"
+              width="40"
+              placeholder="enter Password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <button
+              id="signupSubmitButton"
+              onClick={(e) => {
+                e.preventDefault();
+                logIn(e);
+              }}
+            >
+              Login
+            </button>
+            <br />
+            <Link exact href="/check" id="link">
+              Forget password
+            </Link>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 

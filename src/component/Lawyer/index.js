@@ -18,8 +18,8 @@ import {
   Link,
   Image,
   HStack,
-  ListItem
-} from '@chakra-ui/react';
+  ListItem,
+} from "@chakra-ui/react";
 
 const Laywer = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -40,7 +40,6 @@ const Laywer = () => {
     const result = await axios.get(`${BASE_URL}/show/alluser`);
     setLawyer(result.data.filter((item) => item.role == ROLE));
     console.log(result.data.filter((item) => item.role == ROLE));
-    
   };
 
   const logout = () => {
@@ -55,47 +54,34 @@ const Laywer = () => {
 
   return (
     <>
-    
-    <div className="Nav">
-      <h1>المحامين والمستشارين</h1>
-      </div>
-{/* 
-      <div className="posthome">
-        <div className="post">
-          <div className="test"> */}
-        <div className="mainwrapper">
-        
-          {lawyer.map((user) => (
-            <div className="list"> 
-             <div className="LineOne">
-             <img src={user.img} alt="#" id="imag" />
-            <h4 id="name">{user.name}</h4>
-              </div>
-              
-            <div className="LineTwo">
-             {/* <td> <h4>{user.bio}</h4></td> */}
-              <h5 id="degeename">  تخصص :{user.Qualification}</h5>
-              <h5> النوع :{user.Trackslegal}</h5> 
-             {/* <td>  <h5>{user.Education}</h5> </td> */}
-              </div>
-              {/* <h6> {user.FieldOfExpertise} </h6> */}
-             
-              
-              <button id="button"
-              onClick={() => move(user._id)}>الأتعاب المالية {user.name} </button>
-              
-            </div>
-          ))} 
-          </div>
-          <button 
-          bg="red"
-          bgSize="3%"
-          id="logbut" onClick={logout}>
-        تسجيل خروج
-      </button>
-          {/* </div>
+      <div className="wr">
+        <div className="Nav">
+          <h1>المحامين والمستشارين</h1>
         </div>
-      </div> */}
+
+        <div className="mainwrapper">
+          {lawyer.map((user) => (
+            <div className="list">
+              <div className="LineOne">
+                <img src={user.img} alt="#" id="imag" />
+                <h4 id="name">{user.name}</h4>
+              </div>
+
+              <div className="LineTwo">
+                <h5 id="degeename"> تخصص :{user.Qualification}</h5>
+                <h5> النوع :{user.Trackslegal}</h5>
+              </div>
+
+              <button id="SubmitButton" onClick={() => move(user._id)}>
+                الأتعاب المالية {user.price}{" "}
+              </button>
+            </div>
+          ))}
+        </div>
+        <button id="logoutSubmitButton" bg="red" bgSize="3%" onClick={logout}>
+          تسجيل خروج
+        </button>
+      </div>
     </>
   );
 };
