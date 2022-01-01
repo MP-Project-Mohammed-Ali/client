@@ -1,8 +1,59 @@
 .request{
     position: absolute;
-    background-color: wheat;
+    background-color: rgb(51, 48, 41);
     width: 30%;
-    height: 30%;
+    height: 17rem;
     top: 35%;
     left: 35%;
+  }
+  #inputcase{
+    width: 60%;
+    height: 2rem;
+    margin: 25px;
+    margin-left: 90px;
+    background-color: rgb(250, 245, 245);
+    color: rgb(165, 164, 164);
+    text-align: center;
+  }
+  #inputdesc{
+    width: 60%;
+    height: 3rem;
+    margin: 25px;
+    margin-left: 90px;
+    background-color: rgb(250, 245, 245);
+    color: rgb(165, 164, 164);
+    text-align: center;
+  }
+  #caseSubmitButton{
+    width: 30%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+  }
+  #caseSubmitButton:hover {
+    background: #6d44b8;
+  }
+  .caselist{
+    background-color: rgb(207, 207, 199);
+    width: 20%;
+    
+  }
+  #listcase{
+    font-size: 25px;
+    text-align: center;
+  }
+  .butt{
+    display: flex;
+    flex-direction: row;
   }

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
-import ReactCodeInput from 'react-verification-code-input';
-import PasswordChecklist from 'react-password-checklist';
-import axios from 'axios';
+import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import ReactCodeInput from "react-verification-code-input";
+import PasswordChecklist from "react-password-checklist";
+import axios from "axios";
 import {
   ChakraProvider,
   Box,
@@ -17,7 +17,7 @@ import {
   Button,
   HStack,
   Input,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
 const MySwal = withReactContent(Swal);
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -36,16 +36,14 @@ const ResetPassword = () => {
           password,
         });
         Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Your password has been reset ',
+          position: "center",
+          icon: "success",
+          title: "Your password has been reset ",
           showConfirmButton: false,
-          timer: 1500
-        })
-        navigate('/login');
-      } catch (error) {
-        
-      }
+          timer: 1500,
+        });
+        navigate("/login");
+      } catch (error) {}
     }
   };
   return (
@@ -65,20 +63,20 @@ const ResetPassword = () => {
           <h1>Reset Your Password</h1>
           <PasswordChecklist
             rules={[
-              'minLength',
-              'specialChar',
-              'number',
-              'capital',
-              'lowercase',
+              "minLength",
+              "specialChar",
+              "number",
+              "capital",
+              "lowercase",
             ]}
             minLength={6}
             value={password}
-            onChange={isValid => {
+            onChange={(isValid) => {
               if (isValid) {
-                const button = document.querySelector('#resetPasswordButton');
+                const button = document.querySelector("#resetPasswordButton");
                 button.disabled = false;
               } else {
-                const button = document.querySelector('#resetPasswordButton');
+                const button = document.querySelector("#resetPasswordButton");
                 button.disabled = true;
               }
             }}
@@ -91,10 +89,10 @@ const ResetPassword = () => {
             type="password"
             placeholder="Password"
             className="resetPassword"
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <ReactCodeInput fields={4} onComplete={val => setCode(val)} />
+          <ReactCodeInput fields={4} onComplete={(val) => setCode(val)} />
           <Button bg="#777" id="resetPasswordButton" onClick={resetPassword}>
             Reset
           </Button>

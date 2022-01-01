@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import "./style.css"
+import { useNavigate } from "react-router";
+import "./style.css";
 
 const Case = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const [data, setData] = useState([]);
   const [Reqiest, setReqiest] = useState(false);
@@ -55,21 +57,47 @@ const Case = () => {
 
   return (
     <div className="home">
-      <h1>Hello</h1>
-      {data.map((caase) => (
-        <h1>{caase.title}</h1>
-      ))}
-      <button onClick={() => setReqiest(true)}> طلب</button>
+      <h1>اكتب استشارتك هنا </h1>
+      <div className="caselist">
+        {data.map((caase) => (
+          <ol id="listcase">
+            <li>{caase.title}</li>
+          </ol>
+        ))}
+        <div className="butt">
+          <button onClick={() => navigate("/show")} id="caseSubmitButton">
+            رجوع
+          </button>
+          <button onClick={() => setReqiest(true)} id="caseSubmitButton">
+            {" "}
+            أضف قضية{" "}
+          </button>
+        </div>
+      </div>
       {Reqiest ? (
         <div className="request">
           <form onSubmit={sendCase}>
-            <label htmlFor="title">Title</label>
-            <input type="text" placeholder="title.." name="title" />
-            <label htmlFor="desc">Description</label>
-            <input type="text" placeholder="Description.." name="desc" />
-            <button type="submit">Send</button>
+            <label htmlFor="title"></label>
+            <input
+              type="text"
+              placeholder="اكتب عنوان استشارتك"
+              name="title"
+              id="inputcase"
+            />
+            <label htmlFor="desc"></label>
+            <input
+              type="text"
+              placeholder="اكتب تفاصيل استشارتك هنا"
+              name="desc"
+              id="inputdesc"
+            />
+            <button type="submit" id="caseSubmitButton">
+              إرسال
+            </button>
           </form>
-          <button onClick={() => setReqiest(false)}>Cancel</button>
+          <button onClick={() => setReqiest(false)} id="caseSubmitButton">
+            إالغاء
+          </button>
         </div>
       ) : (
         <></>

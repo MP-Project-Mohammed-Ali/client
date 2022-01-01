@@ -21,7 +21,6 @@ import {
 import Swal from "sweetalert2";
 const MySwal = withReactContent(Swal);
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-// const MySwal =withReactContent(Swal)
 
 const Register = () => {
   const navigate = useNavigate();
@@ -42,7 +41,6 @@ const Register = () => {
         name: name,
         email: email,
         password: password,
-        // role:process.env.REACT_APP_USER_ROLE
       });
       MySwal.fire({
         position: "center",
@@ -53,8 +51,6 @@ const Register = () => {
       });
       navigate("/active");
     } catch (error) {
-      // setMessage(result.data.message);
-
       MySwal.fire({
         icon: "error",
         title: "Oops...",
@@ -65,152 +61,122 @@ const Register = () => {
   };
 
   return (
-    <ChakraProvider theme={theme}>
-      {/* <Box
-        borderRadius="4px"
-        border="solid silver"
-        textAlign="center"
-        w="400px"
-        mt="100px"
-        textAlign="center"
-        ml="450px"
-        bg="#fffb"
-        color="black" 
-      > */}
-
-      <div className="Box">
-        <VStack mt="3">
-          <h1>Register</h1>
-          {state.token ? (
-            <h1>
-              {/* <div className="centerWrapper">
-                <div className="homeSignupButtons">
-                  <button onClick={() => navigate("/")}>HOME</button>
-                </div>
-              </div> */}
-            </h1>
-          ) : (
-            <main className="main">
-              <div className="signupPanel__half signupHalf--second">
-                {/* <h2>Signup</h2> */}
-                {message ? <div className="message">{message}</div> : ""}
-
-                <Box className="signupInput">
-                  <Input
-                    type="text"
-                    placeholder="Username"
-                    width="80%"
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                  />
-
-                  <Input
-                    type="text"
-                    placeholder="Email"
-                    width="80%"
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-
-                  <Input
-                    type="password"
-                    placeholder="Password"
-                    width="80%"
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-
-                  <Button
-                    id="signupSubmitButton"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      signUp(e);
-                    }}
-                  >
-                    SingUp
-                  </Button>
-
-                  {/* <label>التسجيل ك</label>
-               <input type="radio" id="under_13" defaultValue="under_13" name="user_age" /><label htmlFor="under_13" className="light">محامي</label><br />
-               <input type="radio" id="over_13" defaultValue="over_13" name="user_age" /><label htmlFor="over_13" className="light">مستخدم</label> */}
-                </Box>
-              </div>
-            </main>
-          )}
-        </VStack>
-        <Box id="check">
-          <div className="role">
-            <PasswordChecklist
-              rules={[
-                "minLength",
-                "specialChar",
-                "number",
-                "capital",
-                "lowercase",
-              ]}
-              minLength={6}
-              value={password}
-              onChange={(isValid) => {
-                if (isValid) {
-                  const button = document.querySelector("#signupSubmitButton");
-                  button.disabled = false;
-                } else {
-                  const button = document.querySelector("#signupSubmitButton");
-                  button.disabled = true;
-                }
-              }}
-            />
-
-            <Link id="loginButton" onClick={() => navigate("/login")}>
-              login page
-            </Link>
+    <div>
+      <div className="bigwrapper">
+        <div className="main">
+          <input type="checkbox" id="chk" aria-hidden="true" />
+          <div className="singup">
+            <form>
+              <label className="SingupLabel" htmlFor="chk" aria-hidden="true">
+                {" "}
+                Sing up{" "}
+              </label>
+              <input
+                type="text"
+                placeholder="Username"
+                width="80%"
+                height="2rem"
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                placeholder="Email"
+                width="80%"
+                height="2rem"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                width="80%"
+                height="2rem"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                id="signupSubmitButton"
+                onClick={(e) => {
+                  e.preventDefault();
+                  signUp(e);
+                }}
+              >
+                SingUp
+              </button>
+              <PasswordChecklist
+                id="checklist"
+                rules={[
+                  "minLength",
+                  "specialChar",
+                  "number",
+                  "capital",
+                  "lowercase",
+                ]}
+                minLength={6}
+                value={password}
+                onChange={(isValid) => {
+                  if (isValid) {
+                    const button = document.querySelector(
+                      "#signupSubmitButton"
+                    );
+                    button.disabled = false;
+                  } else {
+                    const button = document.querySelector(
+                      "#signupSubmitButton"
+                    );
+                    button.disabled = true;
+                  }
+                }}
+              />
+            </form>
           </div>
-        </Box>
+
+          <div className="login">
+            <form onClick={() => navigate("/login")}>
+              <label
+                className="LoginLable"
+                htmlFor="chk"
+                aria-hidden="true"
+                a
+                target="_blank"
+                href="locall"
+              >
+                Login
+              </label>
+              <input
+                bg="#222"
+                color="white"
+                textAlign="center"
+                type="email"
+                width="40"
+                placeholder="enter Email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <input
+                bg="#222"
+                color="white"
+                textAlign="center"
+                type="password"
+                width="40"
+                placeholder="enter Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+              <button id="signupSubmitButton">Login</button>
+              <br />
+              <Link exact href="/check">
+                Forget password
+              </Link>
+            </form>
+          </div>
+        </div>
       </div>
-      {/* </Box> */}
-    </ChakraProvider>
+    </div>
   );
 };
 
 export default Register;
-
-{
-  /* <div>
-        <meta charSet="utf-8" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Login page</title>
-        <section className="login">
-          <div className="container">
-            <div className="back">
-              <div className="singup">
-                <h2>Dont have account ?</h2>
-                <button id="signup">sign Up</button>
-              </div>
-              <div className="signin">
-                <h2>Have an account ?</h2>
-                <button id="login">Login</button>
-              </div>
-            </div>
-            <div className="front">
-              <div className="formin">
-                <form>
-                  <h2>Login</h2>
-                  <input type="text" placeholder="User Name" />
-                  <input type="password" placeholder="Password" />
-                  <button>Sign In</button>
-                </form>
-              </div>
-              <div className="formUp">
-                <form>
-                  <h2>Sign Up</h2>
-                  <input type="text" placeholder="Full Name" />
-                  <input type="email" placeholder="E-mail" />
-                  <input type="password" placeholder="Password" />
-                  <button>Sign Up</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div> */
-}
