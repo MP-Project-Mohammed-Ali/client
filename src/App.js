@@ -11,6 +11,7 @@ import Lawyer from "./component/Lawyer";
 import Cases from "./component/Cases";
 import Profile from "./component/Profile";
 import Tloader from 'react-touch-loader';
+import LaywerDashpord from './component/LaywerDashpord'
  
 
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/regist" element={<Register />} />
+        <Route exact path="/list" element={<LaywerDashpord />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/check" element={<CheckEmail />} />
         <Route exact path="/reset/:id" element={<ResetPassword />} />

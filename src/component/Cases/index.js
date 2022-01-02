@@ -9,6 +9,7 @@ const Case = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [data, setData] = useState([]);
+  const [updateCasee, setUpdateCasee] = useState("");
   const [Reqiest, setReqiest] = useState(false);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const state = useSelector((state) => {
@@ -66,13 +67,40 @@ const Case = () => {
       console.log(error);
     }
   };
+  const UpdateCase =async (id)=>{
+   const resUpdate=await axios.put(`${BASE_URL}/chang/case/${id}`,{
+    Descraption:updateCasee
+   },
+   {
+    headers: {
+      Authorization: `Bearer ${state.signIn.token}`,
+    },
+   }
+   )
+   getCases();
+  }
+  // const bio = async () => {
+  //   await axios
+  //     .get(`${BASE_URL}/profile/${id}`, {
+  //       headers: { Authorization: `Bearer ${state.signIn.token}` },
+  //     })
+  //     .then((result) => {
+  //       setUser(result.data);
+  //       console.log(result);
+  //     });
+  //   console.log(id);
+  // };
+
   return (
     <div className="home">
       <h1>اكتب استشارتك هنا </h1>
       <div className="caselist">
+        
         {data.map((caase) => (
           <ol id="listcase">
             <li>{caase.title}</li>
+            <br/>
+            <li>{caase.Descraption}</li>
             <li>
               <button
                 onClick={() => {
@@ -81,6 +109,19 @@ const Case = () => {
               >
                 delete
               </button>
+              
+            </li>
+            <li>
+            <input
+                    className="inpup"
+                    onChange={e => {
+                      setUpdateCasee(e.target.value);
+                    }}
+                    placeholder="update"
+                  />
+                  <button className="upBTN" onClick={() => UpdateCase(caase._id)}>
+                    update
+                  </button>{' '}
             </li>
           </ol>
         ))}
