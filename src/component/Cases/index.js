@@ -9,28 +9,34 @@ const Case = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [data, setData] = useState([]);
+  const [info,setInfo]=useState([])
+  const [updateCasee, setUpdateCasee] = useState("");
   const [Reqiest, setReqiest] = useState(false);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const ROLE = process.env.REACT_APP_LAWYER_ROLE;
   const state = useSelector((state) => {
     return state;
   });
-  console.log(state.signIn);
+
   const getCases = async () => {
     try {
       const result = await axios.post(`${BASE_URL}/show/allcase`, {
         laywer: params.id,
         client: state.signIn.id,
-      });
-      console.log("test", result);
+      },{ headers: { Authorization: `Bearer ${state.signIn.token}` }} ,
+      );
       setData(result.data);
     } catch (error) {
-      console.log(error);
+
     }
   };
+  useEffect(() => {
+    getCases();
+  }, []);
+
 
   const sendCase = async (e) => {
     e.preventDefault();
-    console.log(e.target.title.value);
     try {
       const result = await axios.post(
         `${BASE_URL}/addcase`,
@@ -42,35 +48,137 @@ const Case = () => {
         },
         { headers: { Authorization: `Bearer ${state.signIn.token}` } }
       );
-
-      console.log("test", result.data);
       getCases();
     } catch (error) {
-      console.log(error);
+      
+    }
+
+  };
+
+
+  const deleteCase = async (_id) => {
+    try {
+      const delresult = await axios.delete(`${BASE_URL}/delete/case/${_id}`,{
+        headers: {
+          Authorization: `Bearer ${state.signIn.token}`,
+        },
+      });
+      getCases();
+    } catch (error) {
+     
     }
   };
 
+
+  const UpdateCase =async (id)=>{
+    
+   const resUpdate=await axios.put(`${BASE_URL}/chang/case/${id}`,{
+    Descraption:updateCasee
+   },
+   {
+    headers: {
+      Authorization: `Bearer ${state.signIn.token}`,
+    },
+   }
+   )
+   getCases();
+  }
+  const { id } = useParams();
+  const LawyerList = async () => {
+    const result = await axios.get(`${BASE_URL}/profile/${id}`,{
+      headers: {
+        Authorization: `Bearer ${state.signIn.token}`,
+      }
+    });
+    setInfo(result.data);
+  };
   useEffect(() => {
-    getCases();
+    LawyerList();
   }, []);
 
   return (
+    <>
+    
     <div className="home">
-      <h1>اكتب استشارتك هنا </h1>
+    {info.map((infor)=>(
+      <>
+      <div className="bio">
+      <img src={infor.img} alt="#" id="imagcase" />
+      <h3>{infor.name}</h3>
+      {/* <div>
+        <h6>{infor.price}</h6>
+      </div> */}
+      </div>
+      <div>
+        <p className="biotext">{infor.bio}</p>
+      </div>
+      <form className="informationlawyer">
+      <table>
+        <tbody>
+        <tr>
+          <th> الموهل العلمي</th>
+          <th> التخصص الاكاديمي</th>
+        </tr>
+        <tr>
+        <td>{infor.Qualification}</td>
+        <td>{infor.Education}</td>
+        </tr>
+        <tr>
+          <th> الخبرة </th>
+          <th> المسارات القانونية </th>
+        </tr>
+        <tr>
+        <td>{infor.FieldOfExpertise}</td>
+        <td>{infor.Trackslegal}</td>
+        </tr>
+        <button onSubmit={() => setReqiest(true)} id="caseSubmitButton">
+            {" "}
+            طلب استشارة 
+          </button>
+        </tbody>
+      </table>
+      
+      </form>
+      
+      </>
+    ))}
+     
       <div className="caselist">
+        
         {data.map((caase) => (
           <ol id="listcase">
             <li>{caase.title}</li>
+            <br/>
+            <li>{caase.Descraption}</li>
+            <li>
+              <button
+                onClick={() => {
+                  deleteCase(caase._id);
+                }}
+              >
+                delete
+              </button>
+              
+            </li>
+            <li>
+            <input
+                    className="inpup"
+                    onChange={e => {
+                      setUpdateCasee(e.target.value);
+                    }}
+                    placeholder="update"
+                  />
+                  <button className="upBTN" onClick={() => UpdateCase(caase._id)}>
+                    update
+                  </button>{' '}
+            </li>
           </ol>
         ))}
         <div className="butt">
           <button onClick={() => navigate("/show")} id="caseSubmitButton">
             رجوع
           </button>
-          <button onClick={() => setReqiest(true)} id="caseSubmitButton">
-            {" "}
-            أضف قضية{" "}
-          </button>
+         
         </div>
       </div>
       {Reqiest ? (
@@ -84,7 +192,7 @@ const Case = () => {
               id="inputcase"
             />
             <label htmlFor="desc"></label>
-            <input
+            <textarea
               type="text"
               placeholder="اكتب تفاصيل استشارتك هنا"
               name="desc"
@@ -102,6 +210,7 @@ const Case = () => {
         <></>
       )}
     </div>
+    </>
   );
 };
 

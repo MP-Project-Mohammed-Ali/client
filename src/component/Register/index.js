@@ -42,6 +42,7 @@ const Register = () => {
         email: email,
         password: password,
       });
+      
       MySwal.fire({
         position: "center",
         icon: "success",

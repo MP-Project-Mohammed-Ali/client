@@ -25,6 +25,8 @@ import ReactCodeInput from "react-verification-code-input";
 const MySwal = withReactContent(Swal);
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
+const ROLE = process.env.REACT_APP_LAWYER_ROLE;
+// const USER_LAWYER=process.env.REACT_APP_USER_ROLE
 
 const Login = () => {
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ const Login = () => {
   const state = useSelector((state) => {
     return { token: state.signIn.token };
   });
-  console.log(state);
+
   const dispatch = useDispatch();
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -47,15 +49,19 @@ const Login = () => {
         email,
         password,
       });
-      navigate("/show");
-      console.log(result1.data.result._id);
+      // const role=result1.data.result.role
+      if (result1.data.result.role== "61c80a2efa23f676528d6258") {
+        navigate("/list");
+      } else {
+        navigate("/show");
+      }
       dispatch(
         login1({
           role: result1.data.result.role,
           token: result1.data.token,
           id: result1.data.result._id,
         })
-      );
+      ); 
       Swal.fire({
         position: "center",
         icon: "success",
