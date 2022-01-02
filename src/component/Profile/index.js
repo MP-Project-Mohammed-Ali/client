@@ -17,7 +17,9 @@ const Profile = () => {
   }, []);
   const bio = async () => {
     await axios
-      .get(`${BASE_URL}/profile/${id}`)
+      .get(`${BASE_URL}/profile/${id}`, {
+        headers: { Authorization: `Bearer ${state.signIn.token}` },
+      })
       .then((result) => {
         setUser(result.data);
         console.log(result);
@@ -25,18 +27,16 @@ const Profile = () => {
     console.log(id);
   };
   return (
-      <>
-    <h1>hello</h1>
-    
-    {user.map((item) => (
+    <>
+      <h1>hello</h1>
+
+      {user.map((item) => (
         <div>
-      <h1>{item.name}</h1>
-      <h2>
-          {item.email}
-      </h2>
-      </div>
-    ))}
-</>
+          <h1>{item.name}</h1>
+          <h2>{item.email}</h2>
+        </div>
+      ))}
+    </>
   );
 };
 export default Profile;

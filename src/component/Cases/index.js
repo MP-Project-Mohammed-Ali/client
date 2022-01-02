@@ -27,6 +27,9 @@ const Case = () => {
       console.log(error);
     }
   };
+  useEffect(() => {
+    getCases();
+  }, []);
 
   const sendCase = async (e) => {
     e.preventDefault();
@@ -48,12 +51,21 @@ const Case = () => {
     } catch (error) {
       console.log(error);
     }
+
   };
-
-  useEffect(() => {
-    getCases();
-  }, []);
-
+  const deleteCase = async (_id) => {
+    try {
+      const delresult = await axios.delete(`${BASE_URL}/delete/case/${_id}`,{
+        headers: {
+          Authorization: `Bearer ${state.signIn.token}`,
+        },
+      });
+      console.log( "this data",delresult);
+      getCases();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="home">
       <h1>اكتب استشارتك هنا </h1>
@@ -61,6 +73,15 @@ const Case = () => {
         {data.map((caase) => (
           <ol id="listcase">
             <li>{caase.title}</li>
+            <li>
+              <button
+                onClick={() => {
+                  deleteCase(caase._id);
+                }}
+              >
+                delete
+              </button>
+            </li>
           </ol>
         ))}
         <div className="butt">
