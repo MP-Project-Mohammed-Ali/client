@@ -21,7 +21,6 @@ const Case = () => {
         laywer: params.id,
         client: state.signIn.id,
       });
-
       console.log("test", result);
       setData(result.data);
     } catch (error) {
