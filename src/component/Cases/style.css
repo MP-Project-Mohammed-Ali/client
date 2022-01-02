@@ -25,16 +25,17 @@
     text-align: center;
   }
   #caseSubmitButton{
-    width: 30%;
+    width: 50%;
     height: 40px;
-    margin: 10px auto;
+    margin: auto;
+    margin-left: 80%;
     justify-content: center;
     display: block;
     color: #fff;
     background: #573b8a;
     font-size: 1em;
     font-weight: bold;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     outline: none;
     border: none;
     border-radius: 5px;
@@ -42,7 +43,7 @@
     cursor: pointer;
   }
   #caseSubmitButton:hover {
-    background: #6d44b8;
+    background: #413f46;
   }
   .caselist{
     background-color: rgb(207, 207, 199);
@@ -56,4 +57,50 @@
   .butt{
     display: flex;
     flex-direction: row;
+  }
+  .bio{
+    background-color: rgb(54, 54, 126);
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  #imagcase{
+    width: 10%;
+    height: 7rem;
+    text-align: center;
+    border-radius: 60%;
+    margin-top: 1%;
+    margin-left: 45%;
+    border: solid gold 3px;
+  }
+  .biotext{
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  .informationlawyer{
+   
+  }
+  table{
+    background-color: rgb(249, 253, 249);
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0.6px 1.3px 1.3px hsl(0deg 0% 0% / 0.48);
+  }
+  tr{
+    padding: 65px;
+  }
+  td{
+   color: gold;
+   padding: 15px;
+  }
+  th{
+    color:rgb(54, 54, 126);
+  
   }

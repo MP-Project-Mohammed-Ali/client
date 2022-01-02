@@ -21,6 +21,7 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 
+
 const Laywer = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const ROLE = process.env.REACT_APP_LAWYER_ROLE;
@@ -30,7 +31,6 @@ const Laywer = () => {
   const state = useSelector((state) => {
     return state;
   });
-  console.log(state.signIn.token);
 
   useEffect(() => {
     LawyerList();
@@ -39,8 +39,7 @@ const Laywer = () => {
   const LawyerList = async () => {
     const result = await axios.get(`${BASE_URL}/show/alluser`);
     setLawyer(result.data.filter((item) => item.role == ROLE));
-    console.log(result.data.filter((item) => item.role == ROLE));
-  };
+   };
 
   const logout = () => {
     dispatch(logout1({ role: "", token: "" }));
