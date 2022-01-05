@@ -51,7 +51,7 @@ const Reset = () => {
 
   return (
     <div className="checkwraper">
-      <ChakraProvider>
+      {/* <ChakraProvider>
         <Box
           borderRadius="3px"
           border="solid silver"
@@ -62,21 +62,31 @@ const Reset = () => {
           ml="500px"
           bg="#fffb"
           color="black"
-        >
-          <h1>Reset Password</h1>
+        > */}
+      <div>
+        
+        <form className="formcheck">
+          <h1 id="">استعادة كلمة المرور</h1>
           <input
             id="inputchek"
             type="email"
-            placeholder="Enter Your Email"
+            placeholder="من فضلك ادخل الايميل"
             onChange={(e) => {
+              
               setEmail(e.target.value);
             }}
           ></input>
-          <button id="checkSubmitButton" onClick={checkemail}>
-            Send reset code
+          <button className="checkSubmitButton" onClick={(e)=>{
+            e.preventDefault()
+            checkemail(e)}
+          } 
+            >
+            استعد كلمة المرور
           </button>
-        </Box>
-      </ChakraProvider>
+          </form>
+        {/* </Box>
+      </ChakraProvider> */}
+    </div>
     </div>
   );
 };

@@ -17,23 +17,28 @@ function Home() {
     <>
       <div className="homepagewraper">
         <h1 className="home-title">
-          <span>مرحبا بك في موقع للاستشارات القانونية </span>
+       
+          <span>مرحبا بك في موقع استشارة  </span>
+          <span>     للاستشارات القانونية </span>
           <span>من فضلك قم بتسجيل الدخول </span>
+          <span> <button className="homeSubmitButton" onClick={login}>
+              
+              تسجيل دخول
+            </button></span>
+           <span> <button className="homeSubmitButton" onClick={register}>
+              
+              تسجيل جديد
+            </button></span>
         </h1>
-        <div className="head-text">
+        {/* <div className="head-text"> */}
           <div className="head-image"></div>
           <div class="text-on-image">
-            <button id="homeSubmitButton" onClick={login}>
-              {" "}
-              Login{" "}
-            </button>
-            <button id="homeSubmitButton" onClick={register}>
-              {" "}
-              Register{" "}
-            </button>
-          </div>
+          
+          {/* </div> */}
         </div>
+        
       </div>
+     
     </>
   );
 }

@@ -4,7 +4,12 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import "./style.css";
+import Nav from "../Nav/index";
+import Swal from "sweetalert2";
 
+
+import withReactContent from "sweetalert2-react-content";
+import { NavLink } from "react-router-dom";
 const Case = () => {
   const navigate = useNavigate();
   const params = useParams();
@@ -14,13 +19,14 @@ const Case = () => {
   const [Reqiest, setReqiest] = useState(false);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const ROLE = process.env.REACT_APP_LAWYER_ROLE;
+  const MySwal = withReactContent(Swal);
   const state = useSelector((state) => {
     return state;
   });
 
   const getCases = async () => {
     try {
-      const result = await axios.post(`${BASE_URL}/show/allcase`, {
+      const result = await axios.post(`${BASE_URL}/createtab`, {
         laywer: params.id,
         client: state.signIn.id,
       },{ headers: { Authorization: `Bearer ${state.signIn.token}` }} ,
@@ -49,9 +55,21 @@ const Case = () => {
         { headers: { Authorization: `Bearer ${state.signIn.token}` } }
       );
       getCases();
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: " تم ارسال القضية ",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     } catch (error) {
-      
-    }
+      MySwal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "حدث خطأ ",
+        confirmButtonColor: "black",
+      });
+    } 
 
   };
 
@@ -98,7 +116,7 @@ const Case = () => {
 
   return (
     <>
-    
+    <Nav />
     <div className="home">
     {info.map((infor)=>(
       <>
@@ -113,39 +131,40 @@ const Case = () => {
         <p className="biotext">{infor.bio}</p>
       </div>
       <form className="informationlawyer">
-      <table>
+      <table className="tablecase">
         <tbody>
-        <tr>
-          <th> الموهل العلمي</th>
-          <th> التخصص الاكاديمي</th>
+        <tr className="trcase">
+          <th className="thcase"> الموهل العلمي</th>
+          <th className="thcase"> التخصص الاكاديمي</th>
         </tr>
         <tr>
-        <td>{infor.Qualification}</td>
-        <td>{infor.Education}</td>
+        <td className="tdcase">{infor.Qualification}</td>
+        <td className="tdcase">{infor.Education}</td>
         </tr>
         <tr>
-          <th> الخبرة </th>
-          <th> المسارات القانونية </th>
+          <th className="thcase"> الخبرة </th>
+          <th className="thcase"> المسارات القانونية </th>
         </tr>
-        <tr>
-        <td>{infor.FieldOfExpertise}</td>
-        <td>{infor.Trackslegal}</td>
+        <tr className="trcase">
+        <td className="tdcase">{infor.FieldOfExpertise}</td>
+        <td className="tdcase">{infor.Trackslegal}</td>
         </tr>
-        <button onSubmit={() => setReqiest(true)} id="caseSubmitButton">
-            {" "}
-            طلب استشارة 
-          </button>
+        
         </tbody>
       </table>
       
       </form>
+      <button onClick={() => setReqiest(true)} className="caseSubmitButton">
+            {" "}
+            طلب استشارة 
+          </button>
       
       </>
     ))}
      
       <div className="caselist">
         
-        {data.map((caase) => (
+        {/* {data.map((caase) => (
           <ol id="listcase">
             <li>{caase.title}</li>
             <br/>
@@ -173,17 +192,17 @@ const Case = () => {
                   </button>{' '}
             </li>
           </ol>
-        ))}
-        <div className="butt">
+        ))} */}
+        {/* <div className="butt">
           <button onClick={() => navigate("/show")} id="caseSubmitButton">
             رجوع
           </button>
          
-        </div>
+        </div> */}
       </div>
       {Reqiest ? (
         <div className="request">
-          <form onSubmit={sendCase}>
+          <form onSubmit={sendCase} className="lablecase">
             <label htmlFor="title"></label>
             <input
               type="text"
@@ -196,16 +215,18 @@ const Case = () => {
               type="text"
               placeholder="اكتب تفاصيل استشارتك هنا"
               name="desc"
-              id="inputdesc"
+              className="inputdesc"
             />
-            <button type="submit" id="caseSubmitButton">
+            <button type="submit" className="subcaseSubmitButton">
               إرسال
             </button>
-          </form>
-          <button onClick={() => setReqiest(false)} id="caseSubmitButton">
-            إالغاء
+          
+          <button onClick={() => setReqiest(false)} className="subcaseSubmitButton">
+            إلغاء
           </button>
+          </form>
         </div>
+        
       ) : (
         <></>
       )}

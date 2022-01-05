@@ -5,6 +5,7 @@ import withReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
 import PasswordChecklist from "react-password-checklist";
 import axios from "axios";
+import "./style.css"
 import {
   ChakraProvider,
   Box,
@@ -48,7 +49,8 @@ const ResetPassword = () => {
   };
   return (
     <ChakraProvider theme={theme}>
-      <Box
+      <form className="resetpassword">
+      {/* <Box
         borderRadius="3px"
         border="solid silver"
         textAlign="center"
@@ -58,9 +60,9 @@ const ResetPassword = () => {
         ml="450px"
         bg="#fffb"
         color="black"
-      >
+      > */}
         <VStack mt="4">
-          <h1>Reset Your Password</h1>
+          <h1>استعادة كلمة المرور</h1>
           <PasswordChecklist
             rules={[
               "minLength",
@@ -81,23 +83,25 @@ const ResetPassword = () => {
               }
             }}
           />
+          
           <Input
             bg="#222"
             color="white"
             textAlign="center"
             width="40"
             type="password"
-            placeholder="Password"
+            placeholder="كلمة المرور"
             className="resetPassword"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <ReactCodeInput fields={4} onComplete={(val) => setCode(val)} />
           <Button bg="#777" id="resetPasswordButton" onClick={resetPassword}>
-            Reset
+            استعادة
           </Button>
         </VStack>
-      </Box>
+    
+      </form>
     </ChakraProvider>
   );
 };
