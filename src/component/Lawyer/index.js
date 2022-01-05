@@ -6,6 +6,7 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 import { logout1 } from "../../Reducers/login";
 import { list } from "@chakra-ui/react";
+import Nav from "../Nav";
 import {
   ChakraProvider,
   Box,
@@ -53,6 +54,8 @@ const Laywer = () => {
 
   return (
     <>
+    <Nav />
+    <div className="whole">
       <div className="wr">
         <div className="Nav">
           <h1>المحامين والمستشارين</h1>
@@ -71,16 +74,16 @@ const Laywer = () => {
                 <h5> النوع :{user.Trackslegal}</h5>
               </div>
 
-              <button id="SubmitButton" onClick={() => move(user._id)}>
+              <button className="SubmitButton" onClick={() => move(user._id)}>
                 الأتعاب المالية {user.price}{" "}
               </button>
             </div>
           ))}
         </div>
-        <button id="logoutSubmitButton" bg="red" bgSize="3%" onClick={logout}>
+        {/* <button id="logoutSubmitButton" bg="red" bgSize="3%" onClick={logout}>
           تسجيل خروج
-        </button>
-      </div>
+        </button> */}
+      </div></div>
     </>
   );
 };

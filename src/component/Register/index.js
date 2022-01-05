@@ -70,27 +70,30 @@ const Register = () => {
             <form>
               <label className="SingupLabel" htmlFor="chk" aria-hidden="true">
                 {" "}
-                Sing up{" "}
+                تسجيل جديد{" "}
               </label>
               <input
+              className="inputform"
                 type="text"
-                placeholder="Username"
+                placeholder="من فضلك ادخل الاسم"
                 width="80%"
                 height="2rem"
                 onChange={(e) => setName(e.target.value)}
                 required
               />
               <input
+              className="inputform"
                 type="text"
-                placeholder="Email"
+                placeholder="من فضلك ادخل الايميل"
                 width="80%"
                 height="2rem"
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <input
+              className="inputform"
                 type="password"
-                placeholder="Password"
+                placeholder="من فضلك ادخل كلمة المرور"
                 width="80%"
                 height="2rem"
                 onChange={(e) => setPassword(e.target.value)}
@@ -103,9 +106,9 @@ const Register = () => {
                   signUp(e);
                 }}
               >
-                SingUp
+                تسجيل جديد
               </button>
-              <PasswordChecklist
+              {/* <PasswordChecklist
                 id="checklist"
                 rules={[
                   "minLength",
@@ -129,7 +132,7 @@ const Register = () => {
                     button.disabled = true;
                   }
                 }}
-              />
+              /> */}
             </form>
           </div>
 
@@ -143,26 +146,28 @@ const Register = () => {
                 target="_blank"
                 href="locall"
               >
-                Login
+                تسجيل دخول
               </label>
               <input
+              className="inputform"
                 bg="#222"
                 color="white"
                 textAlign="center"
                 type="email"
                 width="40"
-                placeholder="enter Email"
+                placeholder="من فضلك ادخل الايميل"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
               <input
+              className="inputform"
                 bg="#222"
                 color="white"
                 textAlign="center"
                 type="password"
                 width="40"
-                placeholder="enter Password"
+                placeholder="من فضلك ادخل كلمة المرور"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
@@ -170,7 +175,7 @@ const Register = () => {
               <button id="signupSubmitButton">Login</button>
               <br />
               <Link exact href="/check">
-                Forget password
+                استعادة كلمة المرور
               </Link>
             </form>
           </div>

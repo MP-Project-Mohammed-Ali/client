@@ -1,7 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
-import Nav from "./component/Nav/index";
 import Register from "./component/Register";
 import Login from "./component/Login";
 import CheckEmail from "./component/CheckEmail";
@@ -12,18 +11,22 @@ import Cases from "./component/Cases";
 import Profile from "./component/Profile";
 import Tloader from 'react-touch-loader';
 import LaywerDashpord from './component/LaywerDashpord'
+import HomePageList from './component/Lawyer/HomePageList'
+import  Tab  from "./component/Tab";
  
 
 
 function App() {
   return (
     <>
-      <Nav />
+    
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/newtab/:id" element={<Tab />} />
         <Route exact path="/regist" element={<Register />} />
         <Route exact path="/list" element={<LaywerDashpord />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/home" element={<HomePageList />} />
         <Route exact path="/check" element={<CheckEmail />} />
         <Route exact path="/reset/:id" element={<ResetPassword />} />
         <Route exact path="/active/:id" element={<Active />} />

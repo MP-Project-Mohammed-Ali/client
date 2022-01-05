@@ -13,10 +13,10 @@
   padding: auto;
   width: 350px;
   height: 550px;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  background: #a18848;
-  background: -webkit-linear-gradient(to right, #615e46, #ecb016);
-  background: linear-gradient(to right, #615e46, #ecb016);
+  /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
+  /* background: #a18848; */
+  /* background: -webkit-linear-gradient(to right, #615e46, #ecb016); */
+  /* background: linear-gradient(to right, #615e46, #ecb016); */
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
@@ -40,7 +40,7 @@
   transition: 0.5s ease-out;
   margin-bottom: 10px;
 }
-input {
+.inputform {
   width: 60%;
   height: 20px;
   background: #e0dede;
@@ -96,7 +96,7 @@ input {
 }
 .me a:hover {
   color: #fff;
-  background: #ffa200;
+  background: #b9b6b1;
   transition: all easy 0.3s;
 }
 #checklist {

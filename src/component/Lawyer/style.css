@@ -1,6 +1,12 @@
 .wr {
-  width: 100%;
+  width: 79%;
+  margin: 0 auto;
+  margin-top: 4%;
 }
+/* .whole{
+  background-color: #d8d8d8;
+  width: 100%;
+} */
 .mainwrapper {
   display: grid;
   grid-template-columns: 49% 49%;
@@ -62,17 +68,17 @@ li {
 #button {
   color: rgb(238, 240, 235);
   font-size: 19px;
-  background: rgb(33, 33, 102);
+  background: rgb(54, 54, 126);
   text-align: center;
 }
-#logoutSubmitButton {
-  width: 10%;
+/* #logoutSubmitButton {
+  width: 20%;
   height: 40px;
   margin: 10px auto;
   justify-content: center;
   display: block;
   color: #fff;
-  background: #573b8a;
+  background: rgb(54, 54, 126);
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
@@ -81,15 +87,15 @@ li {
   border-radius: 5px;
   transition: 0.2s ease-in;
   cursor: pointer;
-}
-#SubmitButton {
+} */
+.SubmitButton {
   width: 30%;
   height: 70px;
   margin: 10px auto;
   justify-content: center;
   display: block;
   color: #fff;
-  background: #573b8a;
+  background: rgb(54, 54, 126);
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
@@ -99,3 +105,16 @@ li {
   transition: 0.2s ease-in;
   cursor: pointer;
 }
+.SubmitButton :hover{
+  
+}
+
+
+/* body {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  background-color: #0c0f15;
+  overflow-x:hidden;
+  color: #ababab; } */

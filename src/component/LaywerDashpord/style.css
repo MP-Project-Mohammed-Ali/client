@@ -1,0 +1,38 @@
+#checkSubmitButton{
+    width: 50%;
+    height: 40px;
+    margin: auto;
+    margin-left: 41%;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: rgb(54, 54, 126);
+    font-size: 1em;
+    font-weight: bold;
+    /* margin-top: 20px; */
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+  }
+  #checkSubmitButton:hover {
+    background: #413f46;
+  }
+  .tablelist{
+    background-color: rgb(249, 253, 249);
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0.6px 1.3px 1.3px hsl(0deg 0% 0% / 0.48);
+  }
+  .tablelist tr{
+    padding: 65px;
+  }
+  .tablelist td{
+    color: rgb(75, 65, 9);
+   padding: 15px;
+  }
