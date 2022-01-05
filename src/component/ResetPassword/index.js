@@ -5,6 +5,7 @@ import withReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
 import PasswordChecklist from "react-password-checklist";
 import axios from "axios";
+import Nav from "../Nav";
 import "./style.css"
 import {
   ChakraProvider,
@@ -48,6 +49,8 @@ const ResetPassword = () => {
     }
   };
   return (
+    <>
+    <Nav navb={true}/>
     <ChakraProvider theme={theme}>
       <form className="resetpassword">
       {/* <Box
@@ -103,6 +106,7 @@ const ResetPassword = () => {
     
       </form>
     </ChakraProvider>
+    </>
   );
 };
 export default ResetPassword;

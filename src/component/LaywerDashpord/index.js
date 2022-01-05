@@ -104,31 +104,31 @@ function DashbordCase() {
   return (
     
     <>
-    <Nav />
-    <h4>ListCases</h4>
+    <Nav navb={true}/>
+    
 
       {cases.map((list) => (
         <>
-        
-        <table className="tablecase">
+<Nav navb={true}/>
+        <table className="tablelist">
         <tbody>
         <tr >
         
-          <th >{list.title}</th>
+          <th > عنوان القضية :{list.title} </th>
           </tr>
           <tr>
-          <th >{list.client.name}</th>
+          <th > اسم المرسل :{list.client.name}</th>
          
         </tr>
         <tr>
-        <th>{list.client.email}</th>
+        <th> ايميل المرسل :{list.client.email}</th>
         </tr>
         <tr>
         <td><button
             onClick={() =>
               updateUserRole(list._id, process.env.REACT_APP_APPROVED)
             }
-            id="checkSubmitButton"
+            className="checkSubmitButton"
           >
              قبول القضية
           </button></td>
@@ -136,7 +136,7 @@ function DashbordCase() {
             onClick={() =>
               updateUserRole1(list._id, process.env.REACT_APP_REJECTED)
             }
-            id="checkSubmitButton"
+            className="checkSubmitButton"
           >
             رفض القضية
           </button></td>

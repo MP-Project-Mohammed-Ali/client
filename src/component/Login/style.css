@@ -11,7 +11,7 @@ body {
   width: 350px;
   height: 550px;
   /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
-  background: #302b63;
+  background: #5a5a5e;
   /* background: -webkit-linear-gradient(to right, #a7a2a2, #666153); */
   /* background: linear-gradient(to right, #a7a2a2, #666153); */
   overflow: hidden;
@@ -70,7 +70,7 @@ body {
   justify-content: center;
   display: block;
   color: #fff;
-  background: #573b8a;
+  background: #8f8f91;
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;

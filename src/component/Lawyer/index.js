@@ -54,7 +54,7 @@ const Laywer = () => {
 
   return (
     <>
-    <Nav />
+    <Nav navb={true}/>
     <div className="whole">
       <div className="wr">
         <div className="Nav">

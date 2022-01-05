@@ -18,6 +18,7 @@ import withReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./style.css";
+import Nav from "../Nav";
 
 const MySwal = withReactContent(Swal);
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -50,6 +51,7 @@ const Reset = () => {
   };
 
   return (
+    <><Nav navb={true}/>
     <div className="checkwraper">
       {/* <ChakraProvider>
         <Box
@@ -88,6 +90,7 @@ const Reset = () => {
       </ChakraProvider> */}
     </div>
     </div>
+    </>
   );
 };
 

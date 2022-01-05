@@ -28,6 +28,7 @@
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0.6px 1.3px 1.3px hsl(0deg 0% 0% / 0.48);
+    margin-top: 80px;
   }
   .tablelist tr{
     padding: 65px;

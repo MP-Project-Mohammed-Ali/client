@@ -1,21 +1,33 @@
 .wrapperprofile{
-  width: 100%;
+  /* width: 100%;
   display: flex;
-  margin-top: 8%;
+  margin-top: 8%; */
   /* margin-left: 40%; */
+  margin: 1rem 0;
+  background-color: yellow;
   
 }
 .infoprofile{
-  background-color: rgb(249, 253, 249);
-  width: 20%;
-  height: 90px;
+
   text-align: center;
-  margin-left: 39%;
-  font-size: 20px;
+  
+  font-size: 35px;
   border-radius: 10px;
   /* padding: 80px; */
   /* box-shadow: 0.4px 0.8px 0.8px hsl(0deg 0% 0% / 0.49); */
 }
+/* .mainwrapper {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  grid-row-gap: 20px;
+  padding-bottom: 10px;
+  width: 90%;
+
+  margin-top: 100px;
+  border-radius: 80%;
+} */
 .caseprofile{
   background-color: rgb(249, 253, 249);
   width: 80%;
@@ -64,7 +76,9 @@
   /* transition: 0.2s ease-in; */
   cursor: pointer
 }
-
+.h2list{
+  margin-top: 80px;
+}
 #customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;

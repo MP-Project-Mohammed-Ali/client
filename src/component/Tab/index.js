@@ -54,8 +54,8 @@ const userIdLocal = localStorage.getItem("id")
   };
 
 
-  return <div>
-
+  return (
+<><Nav navb={true}/>
 <form onSubmit={createTab}>
             <label htmlFor="title"></label>
             <input
@@ -87,7 +87,9 @@ const userIdLocal = localStorage.getItem("id")
 
 
 </>)}
-  </div>;
+  
+  </>
+  )
 };
 
 export default Tab;
