@@ -66,28 +66,53 @@ const Profile = () => {
 
   return (
     <>
-      <Nav />
+      <Nav navb={true}/>
       <div className="wrapperprofile" dir="ltr">
-        {/* <form className="infobio"> */}
+       
+        <div dir="rtl" className="infoprofile">
+        <h2 className="h2list">قائمة القضايا</h2>
         
-        <table dir="rtl" id="customers">
+        </div>
+        <div className="mainwrapper">
+        {casees.map((item) => {
+          return (
+            <div className="full">
+              <h2> {item.title} </h2>
+              <h5> {item.client.name}</h5>
+              <h6> {item.client.email}</h6>
+              <h4>{item.status.status}</h4>
+              <button
+            className="proSubmitButton"
+              onClick={() => {
+                addtab(item._id);
+              }}
+            >
+               تفاصيل القضية
+            </button>
+            </div>
+          );
+        })}{" "}
+      </div>
+
+        
+        {/* <table dir="rtl" id="customers">
           <tbody>
             <h4>القضايا</h4>
         <tr className="trprofile">
         <th className="thcase">القضايا</th>
       
-        </tr>
-        <tr>
+        </tr> */}
+        {/* <tr>
           
         <th className="thmore">عنوان القضية</th>
           <th className="thmore">اسم المرسل</th>
           <th className="thmore">ايميل المرسل</th>
           <th className="thmore">حالة القضية  </th>
-        </tr>
+        </tr> */}
         
-        {casees.map((item) => (
+        {/* {casees.map((item) => ( */}
           <>
-          <tr className="trprofile">
+          {/* <tr className="trprofile">
             
             <td className="tdmore"> {item.title}</td>
             <td className="tdmore">{item.client.name}</td>
@@ -103,14 +128,14 @@ const Profile = () => {
                تفاصيل القضية
             </button>
             </tr>
-          </tr>
+          </tr> */}
           </>
-        ))}
+        {/* ))} */}
         
         
-        </tbody>
-        </table>
-        <table dir="rtl" className="infoprofile">
+        {/* </tbody>
+        </table> */}
+        {/* <table dir="rtl" className="infoprofile">
           <tbody>
           <tr className="trprofile">
         <th className="thcase">المعلومات الشخصية </th>
@@ -129,7 +154,7 @@ const Profile = () => {
           
         ))}
         </tbody>
-          </table>
+          </table> */}
         
         {/* </form> */}
       </div>

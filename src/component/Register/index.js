@@ -5,6 +5,7 @@ import ReactCodeInput from "react-verification-code-input";
 import PasswordChecklist from "react-password-checklist";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
+import Nav from "../Nav";
 import "./style.css";
 import {
   ChakraProvider,
@@ -62,6 +63,8 @@ const Register = () => {
   };
 
   return (
+    <>
+    <Nav navb={true}/>
     <div>
       <div className="bigwrapper">
         <div className="main">
@@ -182,6 +185,7 @@ const Register = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

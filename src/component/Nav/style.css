@@ -1,16 +1,22 @@
 .wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 60px;
   display: flex;
   /* margin-left: 20%; */
-  border-radius: 9px;
-  /* justify-content: space-between; */
+  border-radius: 6px;
+  justify-content: space-between;
   padding: 0.5 rem calc((100vw - 100px) / 2);
-  z-index: 10;
-  background-color: rgb(200, 200, 209);
+  /* z-index: 10; */
+  background-color: transparent;
   direction: rtl;
+  /* color: aliceblue; */
+}
+.color{
+  background-color: rgb(12, 5, 5);
+  color: white;
+ 
 }
 .links {
   position: relative;
@@ -20,15 +26,32 @@
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  color: rgb(80, 80, 80);
+  color: rgb(255, 255, 255);
   font-size: 19px;
   /* left: 110px; */
+}
+.links a{
+  /* color: aqua; */
+}
+.loginlinks{
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: white;
+  font-size: 19px
 }
 .navMenu {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  width: 100vh;
+  
+}
+.Loginhome{
+  display: flex;
+  margin-left: 1rem;
 }
 #logo {
   /* position: relative; */
@@ -45,7 +68,7 @@
 .home{
   margin-top: 4%;
 }
-.loglinks{
+/* .loglinks{
   position: relative;
   display: flex;
   align-items: center;
@@ -56,6 +79,62 @@
   cursor: pointer;
   color: rgb(80, 80, 80);
   font-size: 19px;
+} */
+.navTrigger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+}
+
+.navTrigger i {
+  background-color: #fff;
+  border-radius: 2px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+  -webkit-animation: outT 0.8s backwards;
+  animation: outT 0.8s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+  margin: 5px 0;
+  -webkit-animation: outM 0.8s backwards;
+  animation: outM 0.8s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+  -webkit-animation: outBtm 0.8s backwards;
+  animation: outBtm 0.8s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+  -webkit-animation: inT 0.8s forwards;
+  animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+  -webkit-animation: inM 0.8s forwards;
+  animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+  -webkit-animation: inBtm 0.8s forwards;
+  animation: inBtm 0.8s forwards;
 }
 @media  screen and (max-width: 1084px){
     .links {

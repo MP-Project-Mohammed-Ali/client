@@ -22,6 +22,7 @@ import {
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
+import Nav from "../Nav";
 const MySwal = withReactContent(Swal);
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -50,18 +51,19 @@ const Login = () => {
         password,
       });
       // const role=result1.data.result.role
-      if (result1.data.result.role== "61c80a2efa23f676528d6258") {
-        navigate("/list");
-      } else {
-        navigate("/show");
-      }
       dispatch(
         login1({
           role: result1.data.result.role,
           token: result1.data.token,
           id: result1.data.result._id,
         })
-      ); 
+      );
+      if (result1.data.result.role== "61c80a2efa23f676528d6258") {
+        navigate("/list");
+      } else {
+        navigate("/show");
+      }
+      
       Swal.fire({
         position: "center",
         icon: "success",
@@ -80,6 +82,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Nav navb={true}/>
     <div className="bigwrapper">
       <div className="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
@@ -196,6 +200,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

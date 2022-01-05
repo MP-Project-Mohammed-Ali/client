@@ -116,7 +116,7 @@ const Case = () => {
 
   return (
     <>
-    <Nav />
+    <Nav navb={true}/>
     <div className="home">
     {info.map((infor)=>(
       <>

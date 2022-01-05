@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import WithReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
 import axios from "axios";
+import Nav from "../Nav/index";
 import {
   ChakraProvider,
   Box,
@@ -17,6 +18,7 @@ import {
   HStack,
   Input,
 } from "@chakra-ui/react";
+// import Nav from "../Nav";
 const MySwal = WithReactContent(Swal);
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -51,6 +53,8 @@ const Active = () => {
     }
   };
   return (
+    <>
+    <Nav navb={true}/>
     <Box
       borderRadius="3px"
       border="solid silver"
@@ -77,6 +81,7 @@ const Active = () => {
         Active
       </button>
     </Box>
+    </>
   );
 };
 
