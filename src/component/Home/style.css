@@ -237,6 +237,7 @@ footer a {
 
 
 @media (max-width: 768px) {
+  
   /* typography sizes */
   
   /* intro section */
@@ -360,7 +361,15 @@ footer a {
 }
 
 @media (max-width: 480px) {
- 
+  .home1 {
+    width: 100%;
+    /* height: 100%; */
+    background-image: url(https://ipsonlaw.com/wp-content/uploads/2020/05/iStock_000017699359_Large-2.png);
+    background-position: center top;
+    background-size: cover;
+    top: 0;
+  
+  }
   /* personal iamge */
   .personal-image img {
     width: 100%;
