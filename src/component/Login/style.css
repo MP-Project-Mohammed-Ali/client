@@ -3,15 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
   /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
-  background: #d8d8d8;
+  background: #ffffff;
   /* background: -webkit-linear-gradient(to left, #b9aa79, #e1eec3); */
   /* background: linear-gradient(to left, #b9aa79, #e1eec3); */
 }
 .main {
   width: 350px;
-  height: 550px;
+  height: 430px;
   /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
-  background: #5a5a5e;
+  background: #86868a;
   /* background: -webkit-linear-gradient(to right, #a7a2a2, #666153); */
   /* background: linear-gradient(to right, #a7a2a2, #666153); */
   overflow: hidden;
@@ -20,7 +20,7 @@ body {
 }
 .inputform {
   width: 60%;
-  height: 40px;
+  height: 20px;
   background: #e0dede;
   justify-content: center;
   display: flex;
@@ -37,7 +37,7 @@ body {
 .singup {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 450px;
 }
 .SingupLabel {
   color: #fff;
@@ -70,7 +70,7 @@ body {
   justify-content: center;
   display: block;
   color: #fff;
-  background: #8f8f91;
+  background: #252525;
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
@@ -81,7 +81,7 @@ body {
   cursor: pointer;
 }
 #signupSubmitButton:hover {
-  background: #6d44b8;
+  background: #000000;
 }
 .login {
   height: 600px;
@@ -91,7 +91,7 @@ body {
   transition: 0.8s ease-in-out;
 }
 .login label {
-  color: #573b8a;
+  color: #605f62;
   transform: scale(0.6);
 }
 #chk:checked ~ .login {

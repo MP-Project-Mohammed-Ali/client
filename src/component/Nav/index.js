@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout1 } from "../../Reducers/login";
 
-
-const Nav = ({navb}) => {
+const Nav = ({ navb }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const ROLE = process.env.REACT_APP_LAWYER_ROLE;
   const [nav, setNav] = useState(navb);
 
   const state = useSelector((state) => {
@@ -30,35 +30,39 @@ const Nav = ({navb}) => {
   window.addEventListener("scroll", changeColor);
 
   return (
-    <div className={!navb ? nav ? "wrapper color" : "wrapper ":"wrapper color"}>
-      {/* <NavLink to="/" className="links"> */}
+    <div
+      className={!navb ? (nav ? "wrapper color" : "wrapper ") : "wrapper color"}
+    >
       <div className="navMenu">
-      <img id="logo" src="/imag/logo2.png" alt="#" />
-      {/* </NavLink> */}
-      
+        <img id="logo" src="/imag/logo2.png" alt="#" />
         <NavLink to="/" className="links">
           الصفحة الرئيسية
         </NavLink>
         {state.signIn.token && (
           <NavLink to={`/profile/${state.signIn.id}`} className="links">
-            الملف الشخصي
+             القضايا
           </NavLink>
         )}
         <NavLink to="/show" className="links">
-          قائمة المحامين
+           المحامين
         </NavLink>
-        </div>
-        <div className="Loginhome">
-          
+      
+     {state?.signIn?.role==ROLE?(
+       <NavLink to="/list" className="links">
+        طلبات الاستشارة
+             </NavLink>
+     ):<></>}
+     </div>
+      <div className="Loginhome">
         {!state.signIn.token && (
           <>
-        <NavLink to="/regist" className="loginlinks">
-          تسجيل جديد{" "}
-        </NavLink>
-        <NavLink to="/login" className="loginlinks">
-          تسجيل دخول
-        </NavLink>
-        </>
+            <NavLink to="/regist" className="loginlinks">
+              تسجيل جديد{" "}
+            </NavLink>
+            <NavLink to="/login" className="loginlinks">
+              تسجيل دخول
+            </NavLink>
+          </>
         )}
         {state.signIn.token && (
           <NavLink to="/" onClick={logout} className="loginlinks">

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { logout1 } from "../../Reducers/login";
 import { useNavigate } from "react-router-dom";
-import "./style.css"
+import "./style.css";
 import Nav from "../Nav";
 import Swal from "sweetalert2";
 import { NavLink } from "react-router-dom";
 import withReactContent from "sweetalert2-react-content";
-
 
 function DashbordCase() {
   const [cases, setCases] = useState([]);
@@ -33,12 +32,9 @@ function DashbordCase() {
       });
       setCases(result.data);
       console.log(result.data);
-      
-    } catch (error) {
-    }
+    } catch (error) {}
   };
-  
- 
+
   console.log(cases);
   const updateUserRole = async (id, status) => {
     try {
@@ -64,9 +60,8 @@ function DashbordCase() {
         text: "حدث خطأ ",
         confirmButtonColor: "black",
       });
-    } 
-      getCases();
-    
+    }
+    getCases();
   };
   const updateUserRole1 = async (id, status) => {
     try {
@@ -92,59 +87,52 @@ function DashbordCase() {
         text: "حدث خطأ ",
         confirmButtonColor: "black",
       });
-    } 
-      getCases();
-    
-  }
+    }
+    getCases();
+  };
   const logout = () => {
     dispatch(logout1({ role: "", token: "" }));
     localStorage.clear();
     navigate("/");
   };
   return (
-    
     <>
-    <Nav navb={true}/>
-    
-
-      {cases.map((list) => (
-        <>
-<Nav navb={true}/>
-        <table className="tablelist">
-        <tbody>
-        <tr >
-        
-          <th > عنوان القضية :{list.title} </th>
-          </tr>
-          <tr>
-          <th > اسم المرسل :{list.client.name}</th>
-         
-        </tr>
-        <tr>
-        <th> ايميل المرسل :{list.client.email}</th>
-        </tr>
-        <tr>
-        <td><button
-            onClick={() =>
-              updateUserRole(list._id, process.env.REACT_APP_APPROVED)
-            }
-            className="checkSubmitButton"
-          >
-             قبول القضية
-          </button></td>
-        <td><button
-            onClick={() =>
-              updateUserRole1(list._id, process.env.REACT_APP_REJECTED)
-            }
-            className="checkSubmitButton"
-          >
-            رفض القضية
-          </button></td>
-        </tr>
-        </tbody>
-        </table>
-        </>
-      ))}
+      <Nav navb={true} />
+<div className="mainwraperlistlawyer">
+      <h2 className="titellistcaseforlawyer">قائمة الطلبات</h2>
+      <div className="listcaseforlawyer">
+        {cases.map((list) => (
+          <>
+           
+            <div className="listcard">
+            <h4>القضية : {list.title}</h4>
+            <h4> التفاصيل :{list.Descraption}</h4>
+            <h4>المرسل : {list.client.name}</h4>
+            <h4>الايميل : {list.client.email}</h4>
+            
+            <div className="butonscases">
+            <button
+              onClick={() =>
+                updateUserRole(list._id, process.env.REACT_APP_APPROVED)
+              }
+              className="checkSubmitButton"
+            >
+              قبول القضية
+            </button>
+            <button
+              onClick={() =>
+                updateUserRole1(list._id, process.env.REACT_APP_REJECTED)
+              }
+              className="checkSubmitButton1"
+            >
+              رفض القضية
+            </button>
+            </div>
+            </div>
+          </>
+        ))}
+        </div>
+     </div>
     </>
   );
 }

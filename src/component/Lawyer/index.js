@@ -5,23 +5,7 @@ import { useState, useEffect } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import { logout1 } from "../../Reducers/login";
-import { list } from "@chakra-ui/react";
 import Nav from "../Nav";
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  VStack,
-  theme,
-  Icon,
-  Input,
-  Button,
-  Link,
-  Image,
-  HStack,
-  ListItem,
-} from "@chakra-ui/react";
-
 
 const Laywer = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -49,7 +33,9 @@ const Laywer = () => {
   };
 
   const move = (id) => {
+    
     navigate(`/cases/${id}`);
+    
   };
 
   return (

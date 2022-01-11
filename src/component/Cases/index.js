@@ -66,7 +66,7 @@ const Case = () => {
       MySwal.fire({
         icon: "error",
         title: "Oops...",
-        text: "حدث خطأ ",
+        text: "من فضلك قم بتعئة الحقول",
         confirmButtonColor: "black",
       });
     } 
@@ -203,14 +203,12 @@ const Case = () => {
       {Reqiest ? (
         <div className="request">
           <form onSubmit={sendCase} className="lablecase">
-            <label htmlFor="title"></label>
             <input
               type="text"
               placeholder="اكتب عنوان استشارتك"
               name="title"
               id="inputcase"
             />
-            <label htmlFor="desc"></label>
             <textarea
               type="text"
               placeholder="اكتب تفاصيل استشارتك هنا"
