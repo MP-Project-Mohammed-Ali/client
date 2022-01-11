@@ -16,6 +16,7 @@ import {
   Grid,
   theme,
   Button,
+  ButtonGroup,
   HStack,
   Input,
 } from "@chakra-ui/react";
@@ -55,7 +56,7 @@ const Active = () => {
   };
   return (
     <>
-    <Nav navb={true}/>
+    {/* <Nav navb={true}/> */}
     <Box
       borderRadius="3px"
       border="solid silver"
@@ -68,23 +69,25 @@ const Active = () => {
       color="black"
     >
       <h1>تفعيل الحساب</h1>
+      <VStack>
       <Box  m="20px" display="inline">
         <ReactCodeInput
          fields={4}
           position="center"
-          ml="20px"
+          justify-content="center"
          
           onComplete={(e) => {
             setCode(e);
           }}
         />
       </Box>
-      <button className="checkSubmitButtonforactive" bg="#777" onClick={verifyAccount}>
-        {" "}
+      </VStack>
+      <button className="SubmitButton" onClick={verifyAccount}>
+        
         تفعيل
       </button>
     </Box>
-    </>
+        </>
   );
 };
 

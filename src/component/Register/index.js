@@ -51,7 +51,7 @@ const Register = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate("/active");
+      navigate("/home");
     } catch (error) {
       MySwal.fire({
         icon: "error",
