@@ -22,12 +22,14 @@ function Home() {
 
       <div className="home1"></div>
       <main className="mainhome">
+     
         <div className="image-intro">
           <div className="first-section">
             <img
               src="https://cdn02.qudsn.co/thumb/w1110/uploads/images/2020/06/Ri073.jpg"
               alt="Mountain peak covered in snow"
             />
+            
             <div className="info-background">
               <p className="homep">
                 المُحاماَة فَنّ قَبْلَ أَن تَكُون مِهْنَة .. لِيس المُحامُونَ
@@ -78,8 +80,9 @@ function Home() {
                 إليك اشد وأقوى ، انت محامي .. اذن انت تعمل في مهنة الجبابرة .
               </p>
             </div>
+            </div>
           </div>
-        </div>
+        
         <footer>
           <div className="copyright-info">
             <p>جميع الحقوق محفوظة © 2022 محمد الوهيد </p>
