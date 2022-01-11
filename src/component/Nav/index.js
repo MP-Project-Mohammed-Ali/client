@@ -30,9 +30,11 @@ const Nav = ({ navb }) => {
   window.addEventListener("scroll", changeColor);
 
   return (
+   
     <div
       className={!navb ? (nav ? "wrapper color" : "wrapper ") : "wrapper color"}
     >
+      
       <div className="navMenu">
         <img id="logo" src="/imag/logo2.png" alt="#" />
         <NavLink to="/" className="links">
@@ -71,6 +73,7 @@ const Nav = ({ navb }) => {
         )}
       </div>
     </div>
+  
   );
 };
 export default Nav;
