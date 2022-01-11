@@ -1,12 +1,51 @@
-#checkSubmitButton{
-    width: 50%;
-    height: 40px;
-    margin: auto;
-    margin-left: 41%;
+.mainwraperlistlawyer{
+  width: 100%;
+  margin: 0 0 ;
+
+}
+.titellistcaseforlawyer{
+  margin-top: 7%;
+  text-align: center;
+  
+}
+.listcaseforlawyer{
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
+  margin: 0 0;
+  max-width: 80%;
+  padding: 1.8rem 1.7rem;
+  grid-gap:1.9rem;
+  align-items: stretch; */
+  display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
+    margin: 0 auto;
+    max-width: 85%;
+    padding: 1.8rem 1.7rem;
+    grid-gap: 1.9rem;
+    align-items: stretch;
+}
+.checkSubmitButton{
+     color: #fff;
+    background: rgb(2, 158, 28);
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+  }
+
+  .checkSubmitButton:hover {
+    background: #413f46;
+  }
+
+  .checkSubmitButton1{
     justify-content: center;
     display: block;
     color: #fff;
-    background: rgb(54, 54, 126);
+    background: rgb(235, 0, 0);
     font-size: 1em;
     font-weight: bold;
     /* margin-top: 20px; */
@@ -15,25 +54,36 @@
     border-radius: 5px;
     transition: 0.2s ease-in;
     cursor: pointer;
+    padding: 0.5rem 1rem;
   }
-  #checkSubmitButton:hover {
+  .checkSubmitButton1:hover {
     background: #413f46;
   }
-  .tablelist{
-    background-color: rgb(249, 253, 249);
-    width: 50%;
-    text-align: center;
-    margin-left: 25%;
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0.6px 1.3px 1.3px hsl(0deg 0% 0% / 0.48);
-    margin-top: 80px;
-  }
-  .tablelist tr{
-    padding: 65px;
-  }
-  .tablelist td{
-    color: rgb(75, 65, 9);
-   padding: 15px;
-  }
+
+.listcard{
+  /* width: 30rem;
+ padding: 2rem 2rem;
+  margin: 1rem;
+  direction: rtl;
+  border: solid silver;
+  background-color: chartreuse; */
+  direction: rtl;
+  display: flex;
+  height: 19rem;
+  flex-direction: column;
+  /* position: relative; */
+  width: 100%;
+  margin: 0 auto;
+  border: solid 1px gray;
+  margin-top: 1%;
+  margin-left: 6px;
+  background-color: rgb(223, 223, 223);
+  border-radius: 5px;
+ 
+}
+.butonscases{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-between;
+}

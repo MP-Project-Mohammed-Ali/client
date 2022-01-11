@@ -5,29 +5,14 @@ import { login1 } from "../../Reducers/login";
 import { useNavigate } from "react-router";
 import PasswordChecklist from "react-password-checklist";
 import "./style.css";
-
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-  Button,
-  HStack,
-  Input,
-} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
 import Nav from "../Nav";
 const MySwal = withReactContent(Swal);
-
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const ROLE = process.env.REACT_APP_LAWYER_ROLE;
-// const USER_LAWYER=process.env.REACT_APP_USER_ROLE
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,13 +29,13 @@ const Login = () => {
     const token = localStorage.getItem("token");
     setLocal(token);
   }, []);
+
   const logIn = async () => {
     try {
       const result1 = await axios.post(`${BASE_URL}/login/new`, {
         email,
         password,
       });
-      // const role=result1.data.result.role
       dispatch(
         login1({
           role: result1.data.result.role,
@@ -80,6 +65,7 @@ const Login = () => {
       });
     }
   };
+
 
   return (
     <>
@@ -123,27 +109,6 @@ const Login = () => {
             <button id="signupSubmitButton" onClick={(e) => {}}>
               تسجيل جديد
             </button>
-            {/* <PasswordChecklist
-              id="checklist"
-              rules={[
-                "minLength",
-                "specialChar",
-                "number",
-                "capital",
-                "lowercase",
-              ]}
-              minLength={6}
-              value={password}
-              onChange={(isValid) => {
-                if (isValid) {
-                  const button = document.querySelector("#signupSubmitButton");
-                  button.disabled = false;
-                } else {
-                  const button = document.querySelector("#signupSubmitButton");
-                  button.disabled = true;
-                }
-              }}
-            /> */}
           </form>
         </div>
 
@@ -193,9 +158,9 @@ const Login = () => {
               تسجيل دخول
             </button>
             <br />
-            <a  href="/check" id="link">
+            <Link to="/check" id="link">
               استعادة كلمة المرور
-            </a>
+            </Link>
           </form>
         </div>
       </div>

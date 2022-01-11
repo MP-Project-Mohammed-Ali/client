@@ -66,26 +66,7 @@ const ResetPassword = () => {
       > */}
         <VStack mt="4">
           <h1>استعادة كلمة المرور</h1>
-          <PasswordChecklist
-            rules={[
-              "minLength",
-              "specialChar",
-              "number",
-              "capital",
-              "lowercase",
-            ]}
-            minLength={6}
-            value={password}
-            onChange={(isValid) => {
-              if (isValid) {
-                const button = document.querySelector("#resetPasswordButton");
-                button.disabled = false;
-              } else {
-                const button = document.querySelector("#resetPasswordButton");
-                button.disabled = true;
-              }
-            }}
-          />
+          
           
           <Input
             bg="#222"

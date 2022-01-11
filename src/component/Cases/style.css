@@ -1,144 +1,166 @@
-.request{
-    position: absolute;
-    background-color: rgb(51, 48, 41);
-    width: 30%;
-    height: 17rem;
-    top: 35%;
-    left: 35%;
-  }
-  /* .informationlawyer{
-    margin-left: 50px;
-  } */
-  #inputcase{
-    width: 60%;
-    height: 2rem;
-    margin: 25px;
-    margin-left: 90px;
-    background-color: rgb(250, 245, 245);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 15px
-  }
-  .inputdesc{
-    width: 60%;
-    /* height: 3rem; */
-    margin: 25px;
-    margin-left: 90px;
-    background-color: rgb(250, 245, 245);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 15px
-    /* position:fixed; */
-  }
-  .caseSubmitButton{
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: row;
-    width: 14%;
-    height: 40px;
-    margin: 1rem;
-    margin-left: 42%;
-    justify-content: center;
-    display: block;
-    color: #fff;
-    background: rgb(54, 54, 126);
-    font-size: 1em;
-    font-weight: bold;
-    /* margin-top: 20px; */
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    transition: 0.2s ease-in;
-    cursor: pointer;
-  }
-  #caseSubmitButton:hover {
-    background: #413f46;
-  }
-  .subcaseSubmitButton{
-    /* display: flex; */
-    /* justify-content: center; */
-    /* flex-direction: row; */
-    width: 26%;
-    height: 35px;
-    margin: auto;
-    margin-left: 42%;
-    /* justify-content: center; */
-    display: block;
-    color: #fff;
-    background: rgb(54, 54, 126);
-    font-size: 1em;
-    font-weight: bold;
-    /* margin-top: 20px; */
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    transition: 0.2s ease-in;
-    cursor: pointer
-  }
-  /* .caselist{
+.request {
+  position: absolute;
+  background-color: rgb(121, 119, 119);
+  width: 30%;
+  padding: 1rem 2rem;
+  top: 35%;
+  border-radius: 10px;
+  left: 32%;
+  margin: 0;
+  border: 1px solid silver;
+ 
+}
+#inputcase {
+  width: 60%;
+  height: 2rem;
+  margin: 25px;
+  margin-left: 90px;
+  background-color: rgb(250, 245, 245);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 15px;
+}
+.inputdesc {
+  width: 60%;
+
+  margin: 25px;
+  margin-left: 90px;
+  background-color: rgb(250, 245, 245);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 15px;
+  /* position:fixed; */
+}
+.caseSubmitButton {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: row;
+  width: 14%;
+  height: 40px;
+  margin: auto;
+  margin-left: 42%;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #252525;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 14px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+#caseSubmitButton:hover {
+  background: #413f46;
+}
+.subcaseSubmitButton {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: row; */
+  width: 26%;
+  height: 35px;
+  margin: auto;
+  margin-left: 42%;
+  /* justify-content: center; */
+  display: block;
+  color: #fff;
+  background: #252525;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+/* .caselist{
     background-color: rgb(207, 207, 199);
     width: 20%;
     margin-left: 80px;
     
   } */
-  #listcase{
-    font-size: 25px;
-    text-align: center;
-  }
-  .butt{
-    display: flex;
-    flex-direction: row;
-  }
-  .bio{
-    background-color: rgb(54, 54, 126);
-    color: white;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  #imagcase{
-    width: 10%;
-    height: 7rem;
-    text-align: center;
-    border-radius: 60%;
-    margin-top: 1%;
-    margin-left: 45%;
-    border: solid rgb(75, 65, 9) 3px;
-  }
-  .biotext{
-    text-align: center;
-    font-size: 1.3rem;
-  }
+#listcase {
+  font-size: 25px;
+  text-align: center;
+}
+.butt {
+  display: flex;
+  flex-direction: row;
+}
+.bio {
+  background-image: url("https://case.edu/images/2020/subfeatures/background-subfeature.jpg");
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
-  .tablecase{
-    background-color: rgb(249, 253, 249);
-    width: 50%;
-    text-align: center;
-    margin-left: 25%;
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0.6px 1.3px 1.3px hsl(0deg 0% 0% / 0.48);
-  }
-  .trcase{
-    padding: 65px;
-  }
+  display: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 4%;
+}
+#imagcase {
+  width: 10%;
+  height: 7rem;
+  text-align: center;
+  border-radius: 60%;
+  margin-top: 1%;
+  margin-left: 45%;
+  border: solid rgb(75, 65, 9) 3px;
+}
+.biotext {
+  text-align: center;
+  font-size: 1.3rem;
+}
 
-  .tdcase{
-   color: rgb(75, 65, 9);
-   padding: 15px;
-  }
-  .thcase{
-    color:rgb(54, 54, 126);
-    
-  
-  }
-  .lablecase{
+.tablecase {
+  background-color: rgb(196, 196, 196);
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0.6px 1.3px 1.3px hsl(0deg 0% 0% / 0.48);
+}
+.trcase {
+  padding: 65px;
+}
+
+.tdcase {
+  color: rgb(19, 17, 17);
+  padding: 15px;
+}
+/* .thcase{
+    color:rgb(0, 0, 0);
+  } */
+/* .lablecase{
     width: 100%;
     padding: 2px;
-  }
+  } */
 /* textarea{
   position: fixed;
 } */
+@media (max-width: 375px) {
+  .request {
+    position: absolute;
+    background-color: rgb(88, 86, 86);
+    width: 60%;
+    /* height:17rem; */
+    /* top: 35%; */
+    left: 25%;
+    /* margin: 0; */
+  }
+  .inputdesc {
+    margin-left: 40px;
+  }
+  #inputcase {
+    margin-left: 40px;
+  }
+}

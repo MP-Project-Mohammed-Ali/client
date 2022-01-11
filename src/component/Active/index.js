@@ -5,6 +5,7 @@ import WithReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
 import axios from "axios";
 import Nav from "../Nav/index";
+import "./style.css"
 import {
   ChakraProvider,
   Box,
@@ -66,19 +67,21 @@ const Active = () => {
       bg="#fffb"
       color="black"
     >
-      <h1>verify your account</h1>
-      <Box paddingLeft="25px" m="20px" display="inline">
+      <h1>تفعيل الحساب</h1>
+      <Box  m="20px" display="inline">
         <ReactCodeInput
+         fields={4}
           position="center"
-          fields={4}
+          ml="20px"
+         
           onComplete={(e) => {
             setCode(e);
           }}
         />
       </Box>
-      <button id="checkSubmitButton" bg="#777" onClick={verifyAccount}>
+      <button className="checkSubmitButtonforactive" bg="#777" onClick={verifyAccount}>
         {" "}
-        Active
+        تفعيل
       </button>
     </Box>
     </>
