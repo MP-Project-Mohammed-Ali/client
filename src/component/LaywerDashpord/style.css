@@ -9,13 +9,7 @@
   
 }
 .listcaseforlawyer{
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
-  margin: 0 0;
-  max-width: 80%;
-  padding: 1.8rem 1.7rem;
-  grid-gap:1.9rem;
-  align-items: stretch; */
+
   display: grid;
     grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
     margin: 0 auto;
@@ -61,12 +55,6 @@
   }
 
 .listcard{
-  /* width: 30rem;
- padding: 2rem 2rem;
-  margin: 1rem;
-  direction: rtl;
-  border: solid silver;
-  background-color: chartreuse; */
   direction: rtl;
   display: flex;
   height: 19rem;

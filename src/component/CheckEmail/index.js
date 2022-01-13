@@ -1,21 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-  Button,
-  HStack,
-  Input,
-} from "@chakra-ui/react";
+
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import ReactCodeInput from "react-verification-code-input";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./style.css";
 import Nav from "../Nav";
@@ -78,8 +65,7 @@ const Reset = () => {
           </button>
           </div>
           </form>
-        {/* </Box>
-      </ChakraProvider> */}
+
     </div>
     </div>
     </>

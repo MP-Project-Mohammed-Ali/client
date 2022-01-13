@@ -53,17 +53,7 @@ const ResetPassword = () => {
     <Nav navb={true}/>
     <ChakraProvider theme={theme}>
       <form className="resetpassword">
-      {/* <Box
-        borderRadius="3px"
-        border="solid silver"
-        textAlign="center"
-        w="400px"
-        mt="100px"
-        textAlign="center"
-        ml="450px"
-        bg="#fffb"
-        color="black"
-      > */}
+     
         <VStack mt="4">
           <h1>استعادة كلمة المرور</h1>
           

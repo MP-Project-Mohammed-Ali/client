@@ -8,7 +8,6 @@
   left: 32%;
   margin: 0;
   border: 1px solid silver;
- 
 }
 #inputcase {
   width: 60%;
@@ -29,11 +28,10 @@
   color: rgb(0, 0, 0);
   text-align: center;
   font-size: 15px;
-  /* position:fixed; */
 }
 .caseSubmitButton {
   display: flex;
-  /* justify-content: center; */
+
   flex-direction: row;
   width: 14%;
   height: 40px;
@@ -56,14 +54,11 @@
   background: #413f46;
 }
 .subcaseSubmitButton {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: row; */
   width: 26%;
   height: 35px;
   margin: auto;
   margin-left: 42%;
-  /* justify-content: center; */
+
   display: block;
   color: #fff;
   background: #252525;
@@ -76,12 +71,7 @@
   transition: 0.2s ease-in;
   cursor: pointer;
 }
-/* .caselist{
-    background-color: rgb(207, 207, 199);
-    width: 20%;
-    margin-left: 80px;
-    
-  } */
+
 #listcase {
   font-size: 25px;
   text-align: center;
@@ -92,7 +82,7 @@
 }
 .bio {
   background-image: url("https://case.edu/images/2020/subfeatures/background-subfeature.jpg");
-  /* background-position: center; */
+
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
@@ -137,25 +127,14 @@
   color: rgb(19, 17, 17);
   padding: 15px;
 }
-/* .thcase{
-    color:rgb(0, 0, 0);
-  } */
-/* .lablecase{
-    width: 100%;
-    padding: 2px;
-  } */
-/* textarea{
-  position: fixed;
-} */
+
 @media (max-width: 375px) {
   .request {
     position: absolute;
     background-color: rgb(88, 86, 86);
     width: 60%;
-    /* height:17rem; */
-    /* top: 35%; */
+
     left: 25%;
-    /* margin: 0; */
   }
   .inputdesc {
     margin-left: 40px;

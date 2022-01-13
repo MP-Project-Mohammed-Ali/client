@@ -51,7 +51,7 @@ const Register = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       MySwal.fire({
         icon: "error",
@@ -111,31 +111,6 @@ const Register = () => {
               >
                 تسجيل جديد
               </button>
-              {/* <PasswordChecklist
-                id="checklist"
-                rules={[
-                  "minLength",
-                  "specialChar",
-                  "number",
-                  "capital",
-                  "lowercase",
-                ]}
-                minLength={6}
-                value={password}
-                onChange={(isValid) => {
-                  if (isValid) {
-                    const button = document.querySelector(
-                      "#signupSubmitButton"
-                    );
-                    button.disabled = false;
-                  } else {
-                    const button = document.querySelector(
-                      "#signupSubmitButton"
-                    );
-                    button.disabled = true;
-                  }
-                }}
-              /> */}
             </form>
           </div>
 

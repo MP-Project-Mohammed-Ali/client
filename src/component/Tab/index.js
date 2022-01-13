@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import "./style.css";
 import Nav from "../Nav/index";
-import Chacra from "../Chacra/chacra";
-import { chakra, Box, Image, Flex, ChakraProvider } from "@chakra-ui/react";
+
+
 import { storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "@firebase/storage";
 
@@ -145,28 +145,13 @@ const Tab = () => {
             </div>
           </div>
 
-          {/* <div className="upload">
-            <input
-              type="file"
-              accept=".gif,.jpg,.jpeg,.png"
-              onChange={(e) => {
-                uploadPictures(e);
-              }}
-              id="img"
-              style={{ display: "none" }}
-            />
-            <label htmlFor="img">تحميل صور</label> */}
+          
           {!(progress == 0) ? (
             <div className="progress">
               <p>يتم الرفع {progress}%</p>
             </div>
           ) : null}
-          {/* </div> */}
-          {/* <div className="imagesPost">
-            {images?.map((image) => (
-              <img src={image} width="80px" height="80px" />
-            ))}
-          </div> */}
+         
 
           <div className="form-group">
             <button type="submit" id="tablistbutoon">

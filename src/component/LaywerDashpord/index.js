@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 import Nav from "../Nav";
 import Swal from "sweetalert2";
-import { NavLink } from "react-router-dom";
 import withReactContent from "sweetalert2-react-content";
 
 function DashbordCase() {

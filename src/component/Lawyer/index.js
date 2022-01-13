@@ -66,9 +66,7 @@ const Laywer = () => {
             </div>
           ))}
         </div>
-        {/* <button id="logoutSubmitButton" bg="red" bgSize="3%" onClick={logout}>
-          تسجيل خروج
-        </button> */}
+       
       </div></div>
     </>
   );

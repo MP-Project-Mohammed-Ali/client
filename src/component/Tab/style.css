@@ -1,63 +1,4 @@
-/* .mainwraperfortab{
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 4%;
-}
-.titeltab{
-    margin-top: 7%;
-    text-align: center;
-}
-.creattab{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));
-    margin: 0 auto;
-    max-width: 45%;
-    padding: 1.8rem 1.7rem;
-    grid-gap:1.9rem;
-    align-items: stretch;
-    border: solid silver;
-    text-align: center;
-  box-shadow: 3.0px 5.9px 5.9px hsl(0deg 0% 0% / 0.41);
-}
-.nametiteltab{
-    width: 20%;
-    height: 3rem;
-}
-.creattab1{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(30rem,1fr));
-    margin: 0 auto;
-    max-width: 45%;
-    padding: 1.8rem 1.7rem;
-    grid-gap:1.9rem;
-    align-items: stretch;
-    border: solid silver;
-    text-align: center;
-    background-color: blue;
-  box-shadow: 3.0px 5.9px 5.9px hsl(0deg 0% 0% / 0.41);
-}
-.readtilte{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
-    margin: 0 auto;
-    max-width: 85%;
-    padding: 1.8rem 1.7rem;
-    grid-gap:1.9rem;
-    align-items: stretch;
-    border: solid black;
-    text-align: center;
-}
-.tabdescraption{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-} */
 
-/* body {
-  color: #2c3e50;
-  background: #ecf0f1;
-  padding: 0 1em 1em;
-} */
 .h1tab{
   text-align: center;
   margin: 80px auto 0 auto;
@@ -126,12 +67,9 @@
 
  
 }
-/* .formtab{
-  width: 30%;
-} */
+
 .wrapertab {
-  /* margin-top: 60px;
-  font-weight: 300; */
+  margin-top: 75px;
   border-radius: 10px;
 
   height: 23rem;
@@ -143,28 +81,7 @@
   background: linear-gradient(to bottom, rgb(134, 133, 133) 0%, #4b4d4e 100%);
 }
 
-/* h1 {
-  text-align: center;
-  margin: 50px auto;
-  font-weight: 100;
-} */
 
-/* label {
-  font-weight: 500;
-  display: block;
-  margin: 4px 0;
-  text-transform: uppercase;
-  font-size: 13px;
-  overflow: hidden;
-}
-label span {
-  float: right;
-  text-transform: none;
-  font-weight: 200;
-  line-height: 1em;
-  font-style: italic;
-  opacity: 0.8;
-} */
 .labeltab{
   text-align: center;
     font-weight: 500;
@@ -198,17 +115,6 @@ label span {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-/* button {
-  padding: 8px 30px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #053777;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 11px;
-  border: 0;
-  text-shadow: 0 1px 2px #fff;
-  cursor: pointer;
-} */
 
 .form-group {
   max-width: 500px;
@@ -216,18 +122,6 @@ label span {
   margin-bottom: 30px;
 }
 
-/*  */
-
-/* h1 {
-  margin: 0;
-  line-height: 2;
-  text-align: center;
-}
-
-h2 {
-  margin: 0 0 0.5em;
-  font-weight: normal;
-} */
 #destabh4{
   padding: 10px;
   height: 100px;

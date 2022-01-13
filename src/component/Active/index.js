@@ -5,7 +5,7 @@ import WithReactContent from "sweetalert2-react-content";
 import ReactCodeInput from "react-verification-code-input";
 import axios from "axios";
 import Nav from "../Nav/index";
-import "./style.css"
+import "./style.css";
 import {
   ChakraProvider,
   Box,
@@ -56,38 +56,36 @@ const Active = () => {
   };
   return (
     <>
-    {/* <Nav navb={true}/> */}
-    <Box
-      borderRadius="3px"
-      border="solid silver"
-      textAlign="center"
-      w="400px"
-      mt="100px"
-      textAlign="center"
-      ml="500px"
-      bg="#fffb"
-      color="black"
-    >
-      <h1>تفعيل الحساب</h1>
-      <VStack>
-      <Box  m="20px" display="inline">
-        <ReactCodeInput
-         fields={4}
-          position="center"
-          justify-content="center"
-         
-          onComplete={(e) => {
-            setCode(e);
-          }}
-        />
+      {/* <Nav navb={true}/> */}
+      <Box
+        borderRadius="3px"
+        border="solid silver"
+        textAlign="center"
+        w="400px"
+        mt="100px"
+        textAlign="center"
+        ml="500px"
+        bg="#fffb"
+        color="black"
+      >
+        <h1>تفعيل الحساب</h1>
+        <VStack>
+          <Box m="20px" display="inline">
+            <ReactCodeInput
+              fields={4}
+              position="center"
+              justify-content="center"
+              onComplete={(e) => {
+                setCode(e);
+              }}
+            />
+          </Box>
+        </VStack>
+        <button className="SubmitButton" onClick={verifyAccount}>
+          تفعيل
+        </button>
       </Box>
-      </VStack>
-      <button className="SubmitButton" onClick={verifyAccount}>
-        
-        تفعيل
-      </button>
-    </Box>
-        </>
+    </>
   );
 };
 
