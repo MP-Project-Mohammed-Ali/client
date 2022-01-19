@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Nav";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 function Home() {

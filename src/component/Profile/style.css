@@ -49,7 +49,6 @@
 .proSubmitButton {
   width: 100%;
   height: 35px;
-
   display: block;
   color: #fff;
   background: #252525;
@@ -58,6 +57,9 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.proSubmitButton:hover{
+  background: #585b5e;
 }
 .h2list {
   margin-top: 80px;
@@ -72,14 +74,19 @@
 }
 .nameproileandimage {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: start;
   flex-direction: row;
   padding: 5px 5px;
+  border: solid 1px silver;
 }
-svg {
-  font-size: 28px;
-  color: black;
+.profiletextinfo{
+  padding-right: 20px;
 }
+svg{
+  height: 1.2rem;
+  margin-top: 4%;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
 .frame {
   position: absolute;

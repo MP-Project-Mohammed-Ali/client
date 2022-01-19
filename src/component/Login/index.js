@@ -3,7 +3,6 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { login1 } from "../../Reducers/login";
 import { useNavigate } from "react-router";
-import PasswordChecklist from "react-password-checklist";
 import "./style.css";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";

@@ -21,7 +21,6 @@
 }
 .inputdesc {
   width: 60%;
-
   margin: 25px;
   margin-left: 90px;
   background-color: rgb(250, 245, 245);
@@ -31,7 +30,6 @@
 }
 .caseSubmitButton {
   display: flex;
-
   flex-direction: row;
   width: 14%;
   height: 40px;
@@ -50,15 +48,14 @@
   transition: 0.2s ease-in;
   cursor: pointer;
 }
-#caseSubmitButton:hover {
-  background: #413f46;
+.caseSubmitButton:hover {
+  background: #585b5e;
 }
 .subcaseSubmitButton {
   width: 26%;
   height: 35px;
   margin: auto;
   margin-left: 42%;
-
   display: block;
   color: #fff;
   background: #252525;
@@ -82,10 +79,8 @@
 }
 .bio {
   background-image: url("https://case.edu/images/2020/subfeatures/background-subfeature.jpg");
-
   background-repeat: no-repeat;
   background-size: 100% 100%;
-
   display: none;
   color: white;
   display: flex;

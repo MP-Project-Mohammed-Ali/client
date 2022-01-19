@@ -34,7 +34,6 @@ function DashbordCase() {
     } catch (error) {}
   };
 
-  console.log(cases);
   const updateUserRole = async (id, status) => {
     try {
       const updateCase = await axios.put(
@@ -74,7 +73,7 @@ function DashbordCase() {
       );
       Swal.fire({
         position: "center",
-        icon: "wrong",
+        icon: "error",
         title: "تم رفض القضية ",
         showConfirmButton: false,
         timer: 1500,
@@ -89,11 +88,7 @@ function DashbordCase() {
     }
     getCases();
   };
-  const logout = () => {
-    dispatch(logout1({ role: "", token: "" }));
-    localStorage.clear();
-    navigate("/");
-  };
+
   return (
     <>
       <Nav navb={true} />

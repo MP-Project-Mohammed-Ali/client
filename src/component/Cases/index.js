@@ -1,4 +1,4 @@
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -70,31 +70,6 @@ const Case = () => {
     }
   };
 
-  const deleteCase = async (_id) => {
-    try {
-      const delresult = await axios.delete(`${BASE_URL}/delete/case/${_id}`, {
-        headers: {
-          Authorization: `Bearer ${state.signIn.token}`,
-        },
-      });
-      getCases();
-    } catch (error) {}
-  };
-
-  const UpdateCase = async (id) => {
-    const resUpdate = await axios.put(
-      `${BASE_URL}/chang/case/${id}`,
-      {
-        Descraption: updateCasee,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${state.signIn.token}`,
-        },
-      }
-    );
-    getCases();
-  };
   const { id } = useParams();
   const LawyerList = async () => {
     const result = await axios.get(`${BASE_URL}/profile/${id}`, {
@@ -143,13 +118,17 @@ const Case = () => {
                 </tbody>
               </table>
             </form>
-            <button
-              onClick={() => setReqiest(true)}
-              className="caseSubmitButton"
-            >
-              {" "}
-              طلب استشارة
-            </button>
+            {state.signIn.id != params.id ? (
+              <button
+                onClick={() => setReqiest(true)}
+                className="caseSubmitButton"
+              >
+                {" "}
+                طلب استشارة
+              </button>
+            ) : (
+              <></>
+            )}
           </>
         ))}
 

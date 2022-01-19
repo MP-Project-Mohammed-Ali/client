@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 import Nav from "../Nav";
 
@@ -38,36 +37,35 @@ const Reset = () => {
   };
 
   return (
-    <><Nav navb={true}/>
-    <div className="checkwraper">
-      <div>
-        
-        <form className="formcheck">
-          <div className="formcheckpassword">
-          <h1 id="">استعادة كلمة المرور</h1>
+    <>
+      <Nav navb={true} />
+      <div className="checkwraper">
+        <div>
+          <form className="formcheck">
+            <div className="formcheckpassword">
+              <h1 id="">استعادة كلمة المرور</h1>
 
-          <input
-            type="email"
-            placeholder="من فضلك ادخل الايميل"
-            id="inputrestpassword"
-            onChange={(e) => {
-              
-              setEmail(e.target.value);
-            }}
-          ></input>
-          <button className="checkSubmitButtonforemail" onClick={(e)=>{
-            e.preventDefault()
-            checkemail(e)}
-          } 
-            >
-
-            استعد كلمة المرور
-          </button>
-          </div>
+              <input
+                type="email"
+                placeholder="من فضلك ادخل الايميل"
+                id="inputrestpassword"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              ></input>
+              <button
+                className="checkSubmitButtonforemail"
+                onClick={(e) => {
+                  e.preventDefault();
+                  checkemail(e);
+                }}
+              >
+                استعد كلمة المرور
+              </button>
+            </div>
           </form>
-
-    </div>
-    </div>
+        </div>
+      </div>
     </>
   );
 };

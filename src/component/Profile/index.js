@@ -15,11 +15,7 @@ import { GrStatusUnknown } from "react-icons/gr";
 const Profile = () => {
   const [user, setUser] = useState([]);
   const [casees, setCases] = useState([]);
-
   const navigate = useNavigate();
-  const [edit, setEdit] = useState("");
-  const [editEmail, setEmail] = useState("");
-  const [Reqiest, setReqiest] = useState(false);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const ROLE = process.env.REACT_APP_LAWYER_ROLE;
   const MySwal = withReactContent(Swal);
@@ -40,9 +36,7 @@ const Profile = () => {
       })
       .then((result) => {
         setUser(result.data);
-        console.log(result.data);
       });
-    console.log(id);
   };
 
   const cases = async () => {
@@ -51,8 +45,6 @@ const Profile = () => {
         headers: { Authorization: `Bearer ${state.signIn.token}` },
       })
       .then((result) => {
-        console.log(result.data);
-
         if (state.signIn.role == ROLE) {
           setCases(
             result.data.filter((item) => item.laywer == state.signIn.id)
@@ -74,10 +66,7 @@ const Profile = () => {
     <>
       <Nav navb={true} />
       <div className="wrapperprofile" dir="ltr">
-        <div dir="rtl" className="infoprofile"> 
-         
-        
-          
+        <div dir="rtl" className="infoprofile">
           <h2 className="h2list">قائمة القضايا</h2>
         </div>
         <div className="mainwrapperprofile">
@@ -87,20 +76,20 @@ const Profile = () => {
                 <div className="full">
                   <div className="nameproileandimage">
                     <MdTitle />
-                    <h3> {item.title}</h3>
+                    <h3 className="profiletextinfo"> {item.title}</h3>
                   </div>
                   {/* </div > */}
                   <div className="nameproileandimage">
                     <ImUser />
-                    <h5> {item.client.name}</h5>
+                    <h5 className="profiletextinfo"> {item.client.name}</h5>
                   </div>
                   <div className="nameproileandimage">
                     <MdEmail />
-                    <h6> {item.client.email}</h6>
+                    <h6 className="profiletextinfo"> {item.client.email}</h6>
                   </div>
                   <div className="nameproileandimage">
                     <GrStatusUnknown />
-                    <h4>{item.status.status}</h4>
+                    <h4 className="profiletextinfo">{item.status.status}</h4>
                   </div>
                   <button
                     className="proSubmitButton"
