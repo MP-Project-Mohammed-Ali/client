@@ -1,4 +1,4 @@
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -11,15 +11,18 @@ import { AiFillDelete } from "react-icons/ai";
 
 import { storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "@firebase/storage";
+// eslint-disable-next-line
 const MySwal = withReactContent(Swal);
 const Tab = () => {
+  // eslint-disable-next-line
   const navigate = useNavigate();
   const params = useParams();
   const [data, setData] = useState([]);
+  // eslint-disable-next-line
   const [info, setInfo] = useState([]);
+  // eslint-disable-next-line
   const [tab, setTab] = useState("");
   const BASE_URL = process.env.REACT_APP_BASE_URL;
-  const ROLE = process.env.REACT_APP_LAWYER_ROLE;
   const [progress, setProgress] = useState(0);
   const [images, setImages] = useState([]);
 
@@ -28,12 +31,10 @@ const Tab = () => {
   });
 
   const getTab = async () => {
-    console.log(params.id);
     try {
       const result = await axios.post(`${BASE_URL}/get_tab`, {
         caseID: params.id,
       });
-      console.log(result.data);
       setData(result.data.filter((item) => !item.isDelete));
     } catch (error) {}
   };
@@ -44,7 +45,6 @@ const Tab = () => {
 
   const createTab = async (e) => {
     e.preventDefault();
-    console.log("ee");
     try {
       const result = await axios.post(
         `${BASE_URL}/createtab`,
@@ -74,10 +74,9 @@ const Tab = () => {
         );
         setProgress(progress);
       },
-      (err) => console.log(err),
+      (err) => 
       () => {
         getDownloadURL(uploadImamge.snapshot.ref).then((url) => {
-          console.log(url);
           setImages([...images, url]);
         });
       }

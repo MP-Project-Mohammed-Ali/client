@@ -30,7 +30,6 @@ function DashbordCase() {
         headers: { Authorization: `Bearer ${state.signIn.token}` },
       });
       setCases(result.data);
-      console.log(result.data);
     } catch (error) {}
   };
 

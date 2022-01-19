@@ -58,7 +58,6 @@ const Profile = () => {
   };
 
   const addtab = (caseId) => {
-    console.log(id);
     navigate(`/newtab/${caseId}`);
   };
 

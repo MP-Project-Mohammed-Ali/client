@@ -14,7 +14,6 @@ const Nav = ({ navb }) => {
   const state = useSelector((state) => {
     return state;
   });
-  console.log(state);
   const logout = () => {
     dispatch(logout1({ role: "", token: "" }));
     localStorage.clear();
